@@ -1,0 +1,6 @@
+framework module SmiSdkVpn {
+  umbrella header "SmiSdkVpn.h"
+
+  export *
+  module * { export * }
+}
