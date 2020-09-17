@@ -63,6 +63,14 @@ class WikiWebViewController: UIViewController, WKNavigationDelegate{
         
         view.addSubview(webView)
         webView.navigationDelegate = self
+        
+        let jsRemoveDonationButton = "javascript:(function f() {" +
+            "document.getElementById('p-donation').style.display='none'; " +
+            "})()"
+        
+        let jsScriptRemoveDonationButton = WKUserScript(source: jsRemoveDonationButton, injectionTime: .atDocumentEnd, forMainFrameOnly: false)
+        
+        webView.configuration.userContentController.addUserScript(jsScriptRemoveDonationButton)
     }
     
     
