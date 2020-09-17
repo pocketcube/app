@@ -20,9 +20,9 @@
 		B093145E24BBEC9600F42961 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B093145C24BBEC9600F42961 /* LaunchScreen.storyboard */; };
 		B093146624BBF36800F42961 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093146524BBF36800F42961 /* AboutViewController.swift */; };
 		B093148A24BBFEBF00F42961 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B093148924BBFEBF00F42961 /* SceneDelegate.swift */; };
-		B09C247824F8983B000A3D4A /* SmiSdkVpn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B09C247624F89832000A3D4A /* SmiSdkVpn.framework */; };
-		B09C247924F8983B000A3D4A /* SmiSdkVpn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B09C247624F89832000A3D4A /* SmiSdkVpn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B09C247B24F89EB9000A3D4A /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B09C247A24F89EB9000A3D4A /* LoadingViewController.swift */; };
+		B0C514482512F4D0009924EE /* SmiSdkVpn.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B0C514462512F4C2009924EE /* SmiSdkVpn.framework */; };
+		B0C514492512F4D0009924EE /* SmiSdkVpn.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B0C514462512F4C2009924EE /* SmiSdkVpn.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -32,7 +32,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B09C247924F8983B000A3D4A /* SmiSdkVpn.framework in Embed Frameworks */,
+				B0C514492512F4D0009924EE /* SmiSdkVpn.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -56,8 +56,8 @@
 		B093145F24BBEC9600F42961 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B093146524BBF36800F42961 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		B093148924BBFEBF00F42961 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B09C247624F89832000A3D4A /* SmiSdkVpn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmiSdkVpn.framework; sourceTree = SOURCE_ROOT; };
 		B09C247A24F89EB9000A3D4A /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		B0C514462512F4C2009924EE /* SmiSdkVpn.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SmiSdkVpn.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +67,7 @@
 			files = (
 				B058200124E3249A00ADB655 /* CoreTelephony.framework in Frameworks */,
 				B058200324E324A500ADB655 /* NetworkExtension.framework in Frameworks */,
-				B09C247824F8983B000A3D4A /* SmiSdkVpn.framework in Frameworks */,
+				B0C514482512F4D0009924EE /* SmiSdkVpn.framework in Frameworks */,
 				B058200524E324AF00ADB655 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -118,7 +118,7 @@
 		B093144E24BBEC9300F42961 /* Escola em Casa */ = {
 			isa = PBXGroup;
 			children = (
-				B09C247624F89832000A3D4A /* SmiSdkVpn.framework */,
+				B0C514462512F4C2009924EE /* SmiSdkVpn.framework */,
 				B058200624E324EB00ADB655 /* Escola em Casa.entitlements */,
 				B04429C624C8062100EF3925 /* Controllers */,
 				B093148924BBFEBF00F42961 /* SceneDelegate.swift */,
@@ -365,6 +365,7 @@
 					"$(PROJECT_DIR)/Escola\\ em\\ Casa",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/smisdkvpn-ios_3.7.8",
+					"$(PROJECT_DIR)/Escola\\ em\\ Casa",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "VPN_API=1";
 				INFOPLIST_FILE = "Escola em Casa/Info.plist";
@@ -400,6 +401,7 @@
 					"$(PROJECT_DIR)/Escola\\ em\\ Casa",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/smisdkvpn-ios_3.7.8",
+					"$(PROJECT_DIR)/Escola\\ em\\ Casa",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = "VPN_API=1";
 				INFOPLIST_FILE = "Escola em Casa/Info.plist";

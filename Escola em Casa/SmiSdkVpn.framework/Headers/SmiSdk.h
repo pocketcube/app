@@ -42,6 +42,8 @@ typedef NS_ENUM(NSInteger, SdReason) {
     SD_NOT_AVAILABLE_SD_STOP_API_CALL = 25,
     SD_NOT_AVAILABLE_ZERO_BALANCE_CAMPAIGN = 26,
     SD_AVAILABLE_ONLY_FOR_ZERO_BALANCE_USERS = 27,
+    SD_NOT_AVAILABLE_GW_HEALTH_CHECK_FAILURE = 28,
+    SD_NOT_AVAILABLE_GW_FAILURE_MULTIPLE_CLEAR_CACHE = 29,
     SD_NOT_AVAILABLE_REASON_UNKNOWN = 100
 };
 
@@ -110,6 +112,7 @@ typedef NS_ENUM(NSInteger, SdReason) {
 /* VPN APIs */
 +(void) initSponsoredVPN:(NSString*)sdkKey showSDMessage:(Boolean)showSDMessage startVPN:(Boolean) startVPN;
 +(void) initSponsoredVPN:(NSString*)sdkKey showSDMessage:(Boolean)showSDMessage;
+//+(void) testSetupVpn:(NSString*)token deviceId:(NSString*)deviceId hostName:(NSString*) hostName;
 +(void) startSponsorVpn;
 +(void) stopSponsorVpn;
 +(SdState) getVpnSdState;
