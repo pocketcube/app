@@ -28,13 +28,12 @@ class SiteWebViewControllerViewController: UIViewController, WKNavigationDelegat
 
         let url = URL(string: "https://escolaemcasa.se.df.gov.br/")!
         webView.load(URLRequest(url: url))
-          
 
         let refresh = UIBarButtonItem(barButtonSystemItem: .refresh, target: webView, action: #selector(webView.reload))
         toolbarItems = [refresh]
         navigationController?.isToolbarHidden = false
     }
-    
+
     override func loadView() {
         webView = WKWebView()
         webView.navigationDelegate = self
