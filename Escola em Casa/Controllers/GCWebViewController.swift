@@ -2,7 +2,18 @@ import UIKit
 import WebKit
 
 class GCWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
+
+    // MARK: - Properties
+
     @IBOutlet weak var activity: UIActivityIndicatorView!
+    
+
+//    lazy var webView: WKWebView = {
+//        let webview = WKWebView(frame: view.bounds)
+//
+//        return webview\
+//    }()
+
     var webView: WKWebView!
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
@@ -83,7 +94,8 @@ class GCWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate 
         let subView = UIView(frame: CGRect(x: 0, y: statusBarHeight, width: screenSize.width, height: screenSize.height-statusBarHeight))
         
         view.addSubview(subView)
-        
+
+        // TODO: Create injectable manager
         let jsCodeEmailBlocker = "javascript:(function f(e) {" +
             "var email = document.getElementsByName('identifier');" +
             "var submitBtn = document.getElementsByClassName('VfPpkd-LgbsSe VfPpkd-LgbsSe-OWXEXe-k8QpJ VfPpkd-LgbsSe-OWXEXe-dgl2Hf nCP5yc AjY5Oe DuMIQc qIypjc TrZEUc')[0];" +

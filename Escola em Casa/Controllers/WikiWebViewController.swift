@@ -1,35 +1,14 @@
 import UIKit
 import WebKit
 
-class WikiWebViewController: UIViewController, WKNavigationDelegate{
-    @IBOutlet weak var activity: UIActivityIndicatorView!
-    var webView: WKWebView!
-    
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        activity.stopAnimating()
-    }
+class WikiWebViewController: UIViewController {
 
-    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-        activity.stopAnimating()
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if navigationAction.targetFrame == nil {
-            webView.load(navigationAction.request)
-            print("Lançamento de nova aba")
-        }
-        if let host = navigationAction.request.url?.host {
-            if host.contains("wikipedia.org") {
-                decisionHandler(.allow)
-                return
-            }
-        }
-        
-        print("Request Bloqueada")
-        
-        decisionHandler(.cancel)
-    }
-    
+    // MARK: - Properties
+
+    @IBOutlet weak var activity: UIActivityIndicatorView!
+
+    var webView: WKWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +51,32 @@ class WikiWebViewController: UIViewController, WKNavigationDelegate{
         
         webView.configuration.userContentController.addUserScript(jsScriptRemoveDonationButton)
     }
-    
-    
+}
+
+extension WikiWebViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        activity.stopAnimating()
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        activity.stopAnimating()
+    }
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if navigationAction.targetFrame == nil {
+            webView.load(navigationAction.request)
+            print("Lançamento de nova aba")
+        }
+        if let host = navigationAction.request.url?.host {
+            if host.contains("wikipedia.org") {
+                decisionHandler(.allow)
+                return
+            }
+        }
+
+        print("Request Bloqueada")
+
+        decisionHandler(.cancel)
+    }
 }

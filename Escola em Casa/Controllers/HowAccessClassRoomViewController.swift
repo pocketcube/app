@@ -1,20 +1,11 @@
 import UIKit
 import WebKit
 
-class HowAccessClassRoomViewController: UIViewController, WKNavigationDelegate {
+class HowAccessClassRoomViewController: UIViewController {
+
+    // MARK: - Properties
     
     var webView: WKWebView!
-
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        if let host = navigationAction.request.url?.host {
-            if host.contains("escolaemcasa.se.df.gov.br") {
-                decisionHandler(.allow)
-                return
-            }
-        }
-
-        decisionHandler(.cancel)
-    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +25,21 @@ class HowAccessClassRoomViewController: UIViewController, WKNavigationDelegate {
         view = webView
     }
 
+    private func setupLayout() {
 
+    }
+}
+
+extension HowAccessClassRoomViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+        if let host = navigationAction.request.url?.host {
+            if host.contains("escolaemcasa.se.df.gov.br") {
+                decisionHandler(.allow)
+                return
+            }
+        }
+
+        decisionHandler(.cancel)
+    }
 }

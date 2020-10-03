@@ -6,8 +6,10 @@ class LoadingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        NotificationCenter.default.addObserver( self,selector: #selector(receivedStateChage), name: NSNotification.Name(rawValue: SDSTATE_CHANGE_NOTIF), object: nil)
+
+        setup()
     }
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -40,8 +42,17 @@ class LoadingViewController: UIViewController {
             //    usage is NOT sponsored and charges apply to user data plan
         }
         else if sr.sdState==SdState.SD_WIFI {
+
         }
     }
-    
-    
+
+    // MARK: - Private Methods
+
+    private func setup() {
+        addObservers()
+    }
+
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(receivedStateChage), name: NSNotification.Name(rawValue: SDSTATE_CHANGE_NOTIF), object: nil)
+    }
 }
