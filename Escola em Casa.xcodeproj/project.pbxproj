@@ -11,7 +11,7 @@
 		AD4E81AB252A7ACA000F4AFC /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E81AA252A7ACA000F4AFC /* OnboardingView.swift */; };
 		AD4E81AF252A7B28000F4AFC /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E81AE252A7B28000F4AFC /* OnboardingViewController.swift */; };
 		AD4E81B2252A7D61000F4AFC /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E81B1252A7D61000F4AFC /* SessionManager.swift */; };
-		AD4E81B5252A7DBF000F4AFC /* AppDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E81B4252A7DBF000F4AFC /* AppDefaultsKeys.swift */; };
+		AD4E81B5252A7DBF000F4AFC /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD4E81B4252A7DBF000F4AFC /* UserDefaultsKeys.swift */; };
 		B058200124E3249A00ADB655 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B058200024E3249A00ADB655 /* CoreTelephony.framework */; };
 		B058200324E324A500ADB655 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B058200224E324A500ADB655 /* NetworkExtension.framework */; };
 		B058200524E324AF00ADB655 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B058200424E324AF00ADB655 /* SystemConfiguration.framework */; };
@@ -51,7 +51,7 @@
 		AD4E81AA252A7ACA000F4AFC /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		AD4E81AE252A7B28000F4AFC /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		AD4E81B1252A7D61000F4AFC /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		AD4E81B4252A7DBF000F4AFC /* AppDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDefaultsKeys.swift; sourceTree = "<group>"; };
+		AD4E81B4252A7DBF000F4AFC /* UserDefaultsKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKeys.swift; sourceTree = "<group>"; };
 		B058200024E3249A00ADB655 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		B058200224E324A500ADB655 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		B058200424E324AF00ADB655 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
@@ -108,7 +108,7 @@
 		AD4E81B0252A7D54000F4AFC /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				AD4E81B4252A7DBF000F4AFC /* AppDefaultsKeys.swift */,
+				AD4E81B4252A7DBF000F4AFC /* UserDefaultsKeys.swift */,
 				AD4E81B1252A7D61000F4AFC /* SessionManager.swift */,
 			);
 			path = Manager;
@@ -292,7 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B093148A24BBFEBF00F42961 /* SceneDelegate.swift in Sources */,
-				AD4E81B5252A7DBF000F4AFC /* AppDefaultsKeys.swift in Sources */,
+				AD4E81B5252A7DBF000F4AFC /* UserDefaultsKeys.swift in Sources */,
 				B093145624BBEC9300F42961 /* WikiWebViewController.swift in Sources */,
 				B06D301624C8178F004FCD50 /* SiteWebViewController.swift in Sources */,
 				AD4E81AB252A7ACA000F4AFC /* OnboardingView.swift in Sources */,

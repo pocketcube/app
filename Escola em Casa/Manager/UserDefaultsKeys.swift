@@ -8,6 +8,6 @@
 
 import Foundation
 
-enum AppDefaultsKeys: String {
+enum UserDefaultsKeys: String {
     case onboadingCompleted = "onboarding_completed"
 }

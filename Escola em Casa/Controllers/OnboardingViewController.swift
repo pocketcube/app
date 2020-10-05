@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 import paper_onboarding
 
 class OnboardingViewController: UIViewController {
@@ -32,12 +33,40 @@ class OnboardingViewController: UIViewController {
     // MARK: - Privete Methods
 
     private func setupLayout() {
+        setupView()
+        setupConstraints()
+
+    }
+
+    private func setupView() {
         view.addSubview(onboardingView)
+    }
+
+    private func setupConstraints() {
+        onboardingView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
 
 extension OnboardingViewController: PaperOnboardingDelegate {
 
+    func onboardingConfigurationItem(_ item: OnboardingContentViewItem, index: Int) { }
+
+    func onboardingWillTransitonToIndex(_ index: Int) { }
+
+    func onboardingPageItemColor(at index: Int) -> UIColor {
+        switch index {
+        case 1:
+            return .red
+        case 2:
+            return .blue
+        case 3:
+            return .black
+        default:
+            return .green
+        }
+    }
 }
 
 extension OnboardingViewController: PaperOnboardingDataSource {
