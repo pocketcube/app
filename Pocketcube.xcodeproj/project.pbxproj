@@ -1,0 +1,916 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E349FCD69866A9F2E27E24E /* Pods_Pocketcube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E2BDF56A8B9B51BF04885 /* Pods_Pocketcube.framework */; };
+		A88C6EADFA1E2099B804AEFF /* Pods_Pocketcube_PocketcubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F74C6F370A8F38D2A5317A4 /* Pods_Pocketcube_PocketcubeUITests.framework */; };
+		AD41EEBA25326A8A0041655B /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEB925326A8A0041655B /* CardComponent.swift */; };
+		AD41EECB253319480041655B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EECA253319480041655B /* ProgressView.swift */; };
+		AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EED0253319800041655B /* UIView+Extensions.swift */; };
+		AD41EEDD25331A030041655B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEDC25331A030041655B /* Coordinator.swift */; };
+		AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEE425331A0B0041655B /* AppCoordinator.swift */; };
+		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
+		ADAB58C92530C90300F05BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58C82530C90300F05BA6 /* AppDelegate.swift */; };
+		ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58CA2530C90300F05BA6 /* SceneDelegate.swift */; };
+		ADAB58CD2530C90300F05BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58CC2530C90300F05BA6 /* ViewController.swift */; };
+		ADAB58D02530C90300F05BA6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADAB58CE2530C90300F05BA6 /* Main.storyboard */; };
+		ADAB58D22530C90500F05BA6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADAB58D12530C90500F05BA6 /* Assets.xcassets */; };
+		ADAB58D52530C90500F05BA6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADAB58D32530C90500F05BA6 /* LaunchScreen.storyboard */; };
+		ADAB58E02530C90500F05BA6 /* PocketcubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58DF2530C90500F05BA6 /* PocketcubeTests.swift */; };
+		ADAB58EB2530C90500F05BA6 /* PocketcubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58EA2530C90500F05BA6 /* PocketcubeUITests.swift */; };
+		ADAB59012530C9E000F05BA6 /* BaseColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59002530C9E000F05BA6 /* BaseColor.swift */; };
+		ADAB59092530CA0300F05BA6 /* TemColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59082530CA0300F05BA6 /* TemColor.swift */; };
+		ADAB590E2530CA6700F05BA6 /* TemColorScaled.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB590D2530CA6700F05BA6 /* TemColorScaled.swift */; };
+		ADAB59192530CDF800F05BA6 /* TembiciColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59182530CDF800F05BA6 /* TembiciColor.swift */; };
+		ADAB59212530CE1800F05BA6 /* BikeItauColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59202530CE1800F05BA6 /* BikeItauColor.swift */; };
+		ADAB59262530CE3300F05BA6 /* ThemesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59252530CE3300F05BA6 /* ThemesManager.swift */; };
+		ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB592B2530CF4800F05BA6 /* ColorFactory.swift */; };
+		ADAB59312530CFB700F05BA6 /* TemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59302530CFB700F05BA6 /* TemTheme.swift */; };
+		ADAB59372530CFE700F05BA6 /* BikeItauTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59362530CFE700F05BA6 /* BikeItauTheme.swift */; };
+		E774BDFD43ADA3FEF9BE63B7 /* Pods_PocketcubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1374C3B25CE8F878F3D60B /* Pods_PocketcubeTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ADAB58DC2530C90500F05BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAB58BD2530C90300F05BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAB58C42530C90300F05BA6;
+			remoteInfo = Pocketcube;
+		};
+		ADAB58E72530C90500F05BA6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ADAB58BD2530C90300F05BA6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ADAB58C42530C90300F05BA6;
+			remoteInfo = Pocketcube;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		25679065AB7E67733A9E630B /* Pods-Pocketcube.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube.debug.xcconfig"; path = "Target Support Files/Pods-Pocketcube/Pods-Pocketcube.debug.xcconfig"; sourceTree = "<group>"; };
+		3186F879CE77A13D7FB8DE4E /* Pods-Pocketcube-PocketcubeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube-PocketcubeUITests.release.xcconfig"; path = "Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5F74C6F370A8F38D2A5317A4 /* Pods_Pocketcube_PocketcubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocketcube_PocketcubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		635E2BDF56A8B9B51BF04885 /* Pods_Pocketcube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocketcube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A179E38772833EC78405AB7 /* Pods-PocketcubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketcubeTests.release.xcconfig"; path = "Target Support Files/Pods-PocketcubeTests/Pods-PocketcubeTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD41EEB925326A8A0041655B /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
+		AD41EECA253319480041655B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
+		AD41EED0253319800041655B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		AD41EEDC25331A030041655B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		AD41EEE425331A0B0041655B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		ADAB58C52530C90300F05BA6 /* Pocketcube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocketcube.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAB58C82530C90300F05BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		ADAB58CA2530C90300F05BA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		ADAB58CC2530C90300F05BA6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		ADAB58CF2530C90300F05BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		ADAB58D12530C90500F05BA6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		ADAB58D42530C90500F05BA6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ADAB58D62530C90500F05BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADAB58DB2530C90500F05BA6 /* PocketcubeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketcubeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAB58DF2530C90500F05BA6 /* PocketcubeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketcubeTests.swift; sourceTree = "<group>"; };
+		ADAB58E12530C90500F05BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADAB58E62530C90500F05BA6 /* PocketcubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PocketcubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ADAB58EA2530C90500F05BA6 /* PocketcubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PocketcubeUITests.swift; sourceTree = "<group>"; };
+		ADAB58EC2530C90500F05BA6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADAB59002530C9E000F05BA6 /* BaseColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseColor.swift; sourceTree = "<group>"; };
+		ADAB59082530CA0300F05BA6 /* TemColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemColor.swift; sourceTree = "<group>"; };
+		ADAB590D2530CA6700F05BA6 /* TemColorScaled.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemColorScaled.swift; sourceTree = "<group>"; };
+		ADAB59182530CDF800F05BA6 /* TembiciColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TembiciColor.swift; sourceTree = "<group>"; };
+		ADAB59202530CE1800F05BA6 /* BikeItauColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeItauColor.swift; sourceTree = "<group>"; };
+		ADAB59252530CE3300F05BA6 /* ThemesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemesManager.swift; sourceTree = "<group>"; };
+		ADAB592B2530CF4800F05BA6 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
+		ADAB59302530CFB700F05BA6 /* TemTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemTheme.swift; sourceTree = "<group>"; };
+		ADAB59362530CFE700F05BA6 /* BikeItauTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeItauTheme.swift; sourceTree = "<group>"; };
+		B381345D03481C79B82874C2 /* Pods-Pocketcube-PocketcubeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube-PocketcubeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		D1671C999A26877E8BBF4894 /* Pods-PocketcubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketcubeTests.debug.xcconfig"; path = "Target Support Files/Pods-PocketcubeTests/Pods-PocketcubeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D24B5CA5B34F6BA538950C98 /* Pods-Pocketcube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube.release.xcconfig"; path = "Target Support Files/Pods-Pocketcube/Pods-Pocketcube.release.xcconfig"; sourceTree = "<group>"; };
+		DE1374C3B25CE8F878F3D60B /* Pods_PocketcubeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PocketcubeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ADAB58C22530C90300F05BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E349FCD69866A9F2E27E24E /* Pods_Pocketcube.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58D82530C90500F05BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E774BDFD43ADA3FEF9BE63B7 /* Pods_PocketcubeTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58E32530C90500F05BA6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A88C6EADFA1E2099B804AEFF /* Pods_Pocketcube_PocketcubeUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B654D440F0A34A6BD449A22 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				635E2BDF56A8B9B51BF04885 /* Pods_Pocketcube.framework */,
+				5F74C6F370A8F38D2A5317A4 /* Pods_Pocketcube_PocketcubeUITests.framework */,
+				DE1374C3B25CE8F878F3D60B /* Pods_PocketcubeTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9C3A88640984B08CBBD160D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				25679065AB7E67733A9E630B /* Pods-Pocketcube.debug.xcconfig */,
+				D24B5CA5B34F6BA538950C98 /* Pods-Pocketcube.release.xcconfig */,
+				B381345D03481C79B82874C2 /* Pods-Pocketcube-PocketcubeUITests.debug.xcconfig */,
+				3186F879CE77A13D7FB8DE4E /* Pods-Pocketcube-PocketcubeUITests.release.xcconfig */,
+				D1671C999A26877E8BBF4894 /* Pods-PocketcubeTests.debug.xcconfig */,
+				9A179E38772833EC78405AB7 /* Pods-PocketcubeTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		AD41EEB825326A7D0041655B /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				AD41EEB925326A8A0041655B /* CardComponent.swift */,
+				AD41EECA253319480041655B /* ProgressView.swift */,
+				AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		AD41EECF2533196F0041655B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD41EED0253319800041655B /* UIView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD41EEDB253319D40041655B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				AD41EEDC25331A030041655B /* Coordinator.swift */,
+				AD41EEE425331A0B0041655B /* AppCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		ADAB58BC2530C90300F05BA6 = {
+			isa = PBXGroup;
+			children = (
+				ADAB58C72530C90300F05BA6 /* Pocketcube */,
+				ADAB58DE2530C90500F05BA6 /* PocketcubeTests */,
+				ADAB58E92530C90500F05BA6 /* PocketcubeUITests */,
+				ADAB58C62530C90300F05BA6 /* Products */,
+				9C3A88640984B08CBBD160D8 /* Pods */,
+				1B654D440F0A34A6BD449A22 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		ADAB58C62530C90300F05BA6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58C52530C90300F05BA6 /* Pocketcube.app */,
+				ADAB58DB2530C90500F05BA6 /* PocketcubeTests.xctest */,
+				ADAB58E62530C90500F05BA6 /* PocketcubeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ADAB58C72530C90300F05BA6 /* Pocketcube */ = {
+			isa = PBXGroup;
+			children = (
+				AD41EEDB253319D40041655B /* Coordinator */,
+				AD41EECF2533196F0041655B /* Extensions */,
+				AD41EEB825326A7D0041655B /* Components */,
+				ADAB58FF2530C96600F05BA6 /* Controller */,
+				ADAB58FE2530C93A00F05BA6 /* Resources */,
+				ADAB58FD2530C92B00F05BA6 /* View */,
+				ADAB58FC2530C91E00F05BA6 /* Core */,
+				ADAB59122530CD9A00F05BA6 /* Theme */,
+				ADAB58D62530C90500F05BA6 /* Info.plist */,
+			);
+			path = Pocketcube;
+			sourceTree = "<group>";
+		};
+		ADAB58DE2530C90500F05BA6 /* PocketcubeTests */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58DF2530C90500F05BA6 /* PocketcubeTests.swift */,
+				ADAB58E12530C90500F05BA6 /* Info.plist */,
+			);
+			path = PocketcubeTests;
+			sourceTree = "<group>";
+		};
+		ADAB58E92530C90500F05BA6 /* PocketcubeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58EA2530C90500F05BA6 /* PocketcubeUITests.swift */,
+				ADAB58EC2530C90500F05BA6 /* Info.plist */,
+			);
+			path = PocketcubeUITests;
+			sourceTree = "<group>";
+		};
+		ADAB58FB2530C91900F05BA6 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB59002530C9E000F05BA6 /* BaseColor.swift */,
+				ADAB59172530CDDD00F05BA6 /* Colors */,
+				ADAB59132530CDA300F05BA6 /* Protocols */,
+				ADAB592B2530CF4800F05BA6 /* ColorFactory.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		ADAB58FC2530C91E00F05BA6 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58C82530C90300F05BA6 /* AppDelegate.swift */,
+				ADAB58CA2530C90300F05BA6 /* SceneDelegate.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		ADAB58FD2530C92B00F05BA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58CE2530C90300F05BA6 /* Main.storyboard */,
+				ADAB58D32530C90500F05BA6 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		ADAB58FE2530C93A00F05BA6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58D12530C90500F05BA6 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		ADAB58FF2530C96600F05BA6 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB58CC2530C90300F05BA6 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ADAB59122530CD9A00F05BA6 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB59252530CE3300F05BA6 /* ThemesManager.swift */,
+				ADAB592A2530CE4F00F05BA6 /* Protocols */,
+				ADAB59352530CFD500F05BA6 /* Themes */,
+				ADAB58FB2530C91900F05BA6 /* Colors */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		ADAB59132530CDA300F05BA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB590D2530CA6700F05BA6 /* TemColorScaled.swift */,
+				ADAB59082530CA0300F05BA6 /* TemColor.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ADAB59172530CDDD00F05BA6 /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB59182530CDF800F05BA6 /* TembiciColor.swift */,
+				ADAB59202530CE1800F05BA6 /* BikeItauColor.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		ADAB592A2530CE4F00F05BA6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB59302530CFB700F05BA6 /* TemTheme.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		ADAB59352530CFD500F05BA6 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				ADAB59362530CFE700F05BA6 /* BikeItauTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ADAB58C42530C90300F05BA6 /* Pocketcube */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAB58EF2530C90500F05BA6 /* Build configuration list for PBXNativeTarget "Pocketcube" */;
+			buildPhases = (
+				BDC7943E1E2137AE44F3CDA2 /* [CP] Check Pods Manifest.lock */,
+				ADAB58C12530C90300F05BA6 /* Sources */,
+				ADAB58C22530C90300F05BA6 /* Frameworks */,
+				ADAB58C32530C90300F05BA6 /* Resources */,
+				0D7D96EEFE682799436DB116 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pocketcube;
+			productName = Pocketcube;
+			productReference = ADAB58C52530C90300F05BA6 /* Pocketcube.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ADAB58DA2530C90500F05BA6 /* PocketcubeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAB58F22530C90500F05BA6 /* Build configuration list for PBXNativeTarget "PocketcubeTests" */;
+			buildPhases = (
+				672A0AD536031B7212BCA611 /* [CP] Check Pods Manifest.lock */,
+				ADAB58D72530C90500F05BA6 /* Sources */,
+				ADAB58D82530C90500F05BA6 /* Frameworks */,
+				ADAB58D92530C90500F05BA6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADAB58DD2530C90500F05BA6 /* PBXTargetDependency */,
+			);
+			name = PocketcubeTests;
+			productName = PocketcubeTests;
+			productReference = ADAB58DB2530C90500F05BA6 /* PocketcubeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ADAB58E52530C90500F05BA6 /* PocketcubeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ADAB58F52530C90500F05BA6 /* Build configuration list for PBXNativeTarget "PocketcubeUITests" */;
+			buildPhases = (
+				EB38DC5C89FC44A56EC1071D /* [CP] Check Pods Manifest.lock */,
+				ADAB58E22530C90500F05BA6 /* Sources */,
+				ADAB58E32530C90500F05BA6 /* Frameworks */,
+				ADAB58E42530C90500F05BA6 /* Resources */,
+				A5A643B78C90BB7664DC6A23 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ADAB58E82530C90500F05BA6 /* PBXTargetDependency */,
+			);
+			name = PocketcubeUITests;
+			productName = PocketcubeUITests;
+			productReference = ADAB58E62530C90500F05BA6 /* PocketcubeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ADAB58BD2530C90300F05BA6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1200;
+				LastUpgradeCheck = 1200;
+				TargetAttributes = {
+					ADAB58C42530C90300F05BA6 = {
+						CreatedOnToolsVersion = 12.0;
+					};
+					ADAB58DA2530C90500F05BA6 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = ADAB58C42530C90300F05BA6;
+					};
+					ADAB58E52530C90500F05BA6 = {
+						CreatedOnToolsVersion = 12.0;
+						TestTargetID = ADAB58C42530C90300F05BA6;
+					};
+				};
+			};
+			buildConfigurationList = ADAB58C02530C90300F05BA6 /* Build configuration list for PBXProject "Pocketcube" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ADAB58BC2530C90300F05BA6;
+			productRefGroup = ADAB58C62530C90300F05BA6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ADAB58C42530C90300F05BA6 /* Pocketcube */,
+				ADAB58DA2530C90500F05BA6 /* PocketcubeTests */,
+				ADAB58E52530C90500F05BA6 /* PocketcubeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ADAB58C32530C90300F05BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAB58D52530C90500F05BA6 /* LaunchScreen.storyboard in Resources */,
+				ADAB58D22530C90500F05BA6 /* Assets.xcassets in Resources */,
+				ADAB58D02530C90300F05BA6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58D92530C90500F05BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58E42530C90500F05BA6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0D7D96EEFE682799436DB116 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocketcube/Pods-Pocketcube-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocketcube/Pods-Pocketcube-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pocketcube/Pods-Pocketcube-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		672A0AD536031B7212BCA611 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PocketcubeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A5A643B78C90BB7664DC6A23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDC7943E1E2137AE44F3CDA2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pocketcube-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB38DC5C89FC44A56EC1071D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Pocketcube-PocketcubeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ADAB58C12530C90300F05BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD41EEDD25331A030041655B /* Coordinator.swift in Sources */,
+				ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */,
+				AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */,
+				ADAB59192530CDF800F05BA6 /* TembiciColor.swift in Sources */,
+				ADAB59312530CFB700F05BA6 /* TemTheme.swift in Sources */,
+				ADAB58CD2530C90300F05BA6 /* ViewController.swift in Sources */,
+				ADAB59012530C9E000F05BA6 /* BaseColor.swift in Sources */,
+				ADAB59212530CE1800F05BA6 /* BikeItauColor.swift in Sources */,
+				ADAB590E2530CA6700F05BA6 /* TemColorScaled.swift in Sources */,
+				AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */,
+				AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */,
+				ADAB58C92530C90300F05BA6 /* AppDelegate.swift in Sources */,
+				ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */,
+				ADAB59262530CE3300F05BA6 /* ThemesManager.swift in Sources */,
+				ADAB59092530CA0300F05BA6 /* TemColor.swift in Sources */,
+				AD41EECB253319480041655B /* ProgressView.swift in Sources */,
+				AD41EEBA25326A8A0041655B /* CardComponent.swift in Sources */,
+				ADAB59372530CFE700F05BA6 /* BikeItauTheme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58D72530C90500F05BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAB58E02530C90500F05BA6 /* PocketcubeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ADAB58E22530C90500F05BA6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ADAB58EB2530C90500F05BA6 /* PocketcubeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ADAB58DD2530C90500F05BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAB58C42530C90300F05BA6 /* Pocketcube */;
+			targetProxy = ADAB58DC2530C90500F05BA6 /* PBXContainerItemProxy */;
+		};
+		ADAB58E82530C90500F05BA6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ADAB58C42530C90300F05BA6 /* Pocketcube */;
+			targetProxy = ADAB58E72530C90500F05BA6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		ADAB58CE2530C90300F05BA6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADAB58CF2530C90300F05BA6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		ADAB58D32530C90500F05BA6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				ADAB58D42530C90500F05BA6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		ADAB58ED2530C90500F05BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		ADAB58EE2530C90500F05BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		ADAB58F02530C90500F05BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25679065AB7E67733A9E630B /* Pods-Pocketcube.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = Pocketcube/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.Pocketcube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		ADAB58F12530C90500F05BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D24B5CA5B34F6BA538950C98 /* Pods-Pocketcube.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = Pocketcube/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.Pocketcube;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Release;
+		};
+		ADAB58F32530C90500F05BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D1671C999A26877E8BBF4894 /* Pods-PocketcubeTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = PocketcubeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.PocketcubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocketcube.app/Pocketcube";
+			};
+			name = Debug;
+		};
+		ADAB58F42530C90500F05BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A179E38772833EC78405AB7 /* Pods-PocketcubeTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = PocketcubeTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.PocketcubeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pocketcube.app/Pocketcube";
+			};
+			name = Release;
+		};
+		ADAB58F62530C90500F05BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B381345D03481C79B82874C2 /* Pods-Pocketcube-PocketcubeUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = PocketcubeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.PocketcubeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pocketcube;
+			};
+			name = Debug;
+		};
+		ADAB58F72530C90500F05BA6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3186F879CE77A13D7FB8DE4E /* Pods-Pocketcube-PocketcubeUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X6TMRN9C3H;
+				INFOPLIST_FILE = PocketcubeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pocketqube.PocketcubeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Pocketcube;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ADAB58C02530C90300F05BA6 /* Build configuration list for PBXProject "Pocketcube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAB58ED2530C90500F05BA6 /* Debug */,
+				ADAB58EE2530C90500F05BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAB58EF2530C90500F05BA6 /* Build configuration list for PBXNativeTarget "Pocketcube" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAB58F02530C90500F05BA6 /* Debug */,
+				ADAB58F12530C90500F05BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAB58F22530C90500F05BA6 /* Build configuration list for PBXNativeTarget "PocketcubeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAB58F32530C90500F05BA6 /* Debug */,
+				ADAB58F42530C90500F05BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ADAB58F52530C90500F05BA6 /* Build configuration list for PBXNativeTarget "PocketcubeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ADAB58F62530C90500F05BA6 /* Debug */,
+				ADAB58F72530C90500F05BA6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ADAB58BD2530C90300F05BA6 /* Project object */;
+}
