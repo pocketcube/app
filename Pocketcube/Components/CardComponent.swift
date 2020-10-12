@@ -25,9 +25,9 @@ class CardView: UIView {
     private func addShadows() {
         backgroundColor = .white
         layer.cornerRadius = 10.0
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = UIColor.darkGray.cgColor
         layer.shadowOffset = CGSize(width: 2.0, height: 1.0)
         layer.shadowRadius = 5.0
-        layer.shadowOpacity = 0.3
+        layer.shadowOpacity = 0.15
     }
 }

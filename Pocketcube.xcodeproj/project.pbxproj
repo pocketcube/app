@@ -9,12 +9,24 @@
 /* Begin PBXBuildFile section */
 		4E349FCD69866A9F2E27E24E /* Pods_Pocketcube.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 635E2BDF56A8B9B51BF04885 /* Pods_Pocketcube.framework */; };
 		A88C6EADFA1E2099B804AEFF /* Pods_Pocketcube_PocketcubeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F74C6F370A8F38D2A5317A4 /* Pods_Pocketcube_PocketcubeUITests.framework */; };
+		AD1FC1342534EF1E003E91D4 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1202534ED33003E91D4 /* Lato-BlackItalic.ttf */; };
+		AD1FC1382534EF23003E91D4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1222534ED33003E91D4 /* Lato-Regular.ttf */; };
+		AD1FC13C2534EF40003E91D4 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1242534ED34003E91D4 /* Lato-Black.ttf */; };
+		AD1FC1402534EF45003E91D4 /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1262534ED34003E91D4 /* Lato-Bold.ttf */; };
+		AD1FC1442534EF47003E91D4 /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1292534ED34003E91D4 /* Lato-BoldItalic.ttf */; };
+		AD1FC1482534EF49003E91D4 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1212534ED33003E91D4 /* Lato-Italic.ttf */; };
+		AD1FC14C2534EF4B003E91D4 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1282534ED34003E91D4 /* Lato-Light.ttf */; };
+		AD1FC1502534EF4D003E91D4 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1252534ED34003E91D4 /* Lato-LightItalic.ttf */; };
+		AD1FC1542534EF51003E91D4 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1272534ED34003E91D4 /* Lato-Thin.ttf */; };
+		AD1FC1582534EF53003E91D4 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD1FC1232534ED34003E91D4 /* Lato-ThinItalic.ttf */; };
+		AD1FC1672535164C003E91D4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD1FC1662535164C003E91D4 /* NetworkManager.swift */; };
 		AD41EEBA25326A8A0041655B /* CardComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEB925326A8A0041655B /* CardComponent.swift */; };
 		AD41EECB253319480041655B /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EECA253319480041655B /* ProgressView.swift */; };
 		AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EED0253319800041655B /* UIView+Extensions.swift */; };
 		AD41EEDD25331A030041655B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEDC25331A030041655B /* Coordinator.swift */; };
 		AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEE425331A0B0041655B /* AppCoordinator.swift */; };
 		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
+		AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */; };
 		ADAB58C92530C90300F05BA6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58C82530C90300F05BA6 /* AppDelegate.swift */; };
 		ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58CA2530C90300F05BA6 /* SceneDelegate.swift */; };
 		ADAB58CD2530C90300F05BA6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB58CC2530C90300F05BA6 /* ViewController.swift */; };
@@ -58,12 +70,24 @@
 		5F74C6F370A8F38D2A5317A4 /* Pods_Pocketcube_PocketcubeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocketcube_PocketcubeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		635E2BDF56A8B9B51BF04885 /* Pods_Pocketcube.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pocketcube.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A179E38772833EC78405AB7 /* Pods-PocketcubeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketcubeTests.release.xcconfig"; path = "Target Support Files/Pods-PocketcubeTests/Pods-PocketcubeTests.release.xcconfig"; sourceTree = "<group>"; };
+		AD1FC1202534ED33003E91D4 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		AD1FC1212534ED33003E91D4 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
+		AD1FC1222534ED33003E91D4 /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
+		AD1FC1232534ED34003E91D4 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		AD1FC1242534ED34003E91D4 /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
+		AD1FC1252534ED34003E91D4 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		AD1FC1262534ED34003E91D4 /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
+		AD1FC1272534ED34003E91D4 /* Lato-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Thin.ttf"; sourceTree = "<group>"; };
+		AD1FC1282534ED34003E91D4 /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
+		AD1FC1292534ED34003E91D4 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AD1FC1662535164C003E91D4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AD41EEB925326A8A0041655B /* CardComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardComponent.swift; sourceTree = "<group>"; };
 		AD41EECA253319480041655B /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		AD41EED0253319800041655B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD41EEDC25331A030041655B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41EEE425331A0B0041655B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiaProgressComponent.swift; sourceTree = "<group>"; };
 		ADAB58C52530C90300F05BA6 /* Pocketcube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pocketcube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADAB58C82530C90300F05BA6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADAB58CA2530C90300F05BA6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,12 +168,45 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		AD1FC11F2534ED1F003E91D4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD1FC1242534ED34003E91D4 /* Lato-Black.ttf */,
+				AD1FC1202534ED33003E91D4 /* Lato-BlackItalic.ttf */,
+				AD1FC1262534ED34003E91D4 /* Lato-Bold.ttf */,
+				AD1FC1292534ED34003E91D4 /* Lato-BoldItalic.ttf */,
+				AD1FC1212534ED33003E91D4 /* Lato-Italic.ttf */,
+				AD1FC1282534ED34003E91D4 /* Lato-Light.ttf */,
+				AD1FC1252534ED34003E91D4 /* Lato-LightItalic.ttf */,
+				AD1FC1222534ED33003E91D4 /* Lato-Regular.ttf */,
+				AD1FC1272534ED34003E91D4 /* Lato-Thin.ttf */,
+				AD1FC1232534ED34003E91D4 /* Lato-ThinItalic.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD1FC1652535163F003E91D4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD1FC1662535164C003E91D4 /* NetworkManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		AD1FC16E25351B5C003E91D4 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
 		AD41EEB825326A7D0041655B /* Components */ = {
 			isa = PBXGroup;
 			children = (
 				AD41EEB925326A8A0041655B /* CardComponent.swift */,
 				AD41EECA253319480041655B /* ProgressView.swift */,
 				AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */,
+				AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -196,6 +253,8 @@
 		ADAB58C72530C90300F05BA6 /* Pocketcube */ = {
 			isa = PBXGroup;
 			children = (
+				AD1FC16E25351B5C003E91D4 /* Entity */,
+				AD1FC1652535163F003E91D4 /* Network */,
 				AD41EEDB253319D40041655B /* Coordinator */,
 				AD41EECF2533196F0041655B /* Extensions */,
 				AD41EEB825326A7D0041655B /* Components */,
@@ -259,6 +318,7 @@
 		ADAB58FE2530C93A00F05BA6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AD1FC11F2534ED1F003E91D4 /* Fonts */,
 				ADAB58D12530C90500F05BA6 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -425,8 +485,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD1FC1502534EF4D003E91D4 /* Lato-LightItalic.ttf in Resources */,
+				AD1FC1542534EF51003E91D4 /* Lato-Thin.ttf in Resources */,
+				AD1FC1402534EF45003E91D4 /* Lato-Bold.ttf in Resources */,
+				AD1FC1342534EF1E003E91D4 /* Lato-BlackItalic.ttf in Resources */,
 				ADAB58D52530C90500F05BA6 /* LaunchScreen.storyboard in Resources */,
+				AD1FC1442534EF47003E91D4 /* Lato-BoldItalic.ttf in Resources */,
+				AD1FC1382534EF23003E91D4 /* Lato-Regular.ttf in Resources */,
+				AD1FC14C2534EF4B003E91D4 /* Lato-Light.ttf in Resources */,
 				ADAB58D22530C90500F05BA6 /* Assets.xcassets in Resources */,
+				AD1FC13C2534EF40003E91D4 /* Lato-Black.ttf in Resources */,
+				AD1FC1482534EF49003E91D4 /* Lato-Italic.ttf in Resources */,
+				AD1FC1582534EF53003E91D4 /* Lato-ThinItalic.ttf in Resources */,
 				ADAB58D02530C90300F05BA6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -555,6 +625,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */,
 				AD41EEDD25331A030041655B /* Coordinator.swift in Sources */,
 				ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */,
 				AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */,
@@ -566,6 +637,7 @@
 				ADAB590E2530CA6700F05BA6 /* TemColorScaled.swift in Sources */,
 				AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */,
 				AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */,
+				AD1FC1672535164C003E91D4 /* NetworkManager.swift in Sources */,
 				ADAB58C92530C90300F05BA6 /* AppDelegate.swift in Sources */,
 				ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */,
 				ADAB59262530CE3300F05BA6 /* ThemesManager.swift in Sources */,
