@@ -13,12 +13,11 @@ class RadialProgressComponent: UIView {
     // MARK: - Properties
 
     private lazy var blurEffectView: UIVisualEffectView = {
-        let effect = UIBlurEffect(style: .light)
+        let effect = UIBlurEffect(style: .dark)
         let blurEffectView = UIVisualEffectView(effect: effect)
         blurEffectView.frame = frame
         blurEffectView.clipsToBounds = true
         blurEffectView.layer.cornerRadius = 5
-
 
         return blurEffectView
     }()
@@ -36,7 +35,7 @@ class RadialProgressComponent: UIView {
         let label = UILabel()
         label.text = "20"
         label.textColor = .white
-        label.font = UIFont(descriptor: UIFontDescriptor(), size: 30)
+        label.font = AppFont.regular.size(18)
 
         return label
     }()

@@ -44,8 +44,9 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>Lato-Regular.ttf</string>
+		<string>Lato-Bold.ttf</string>
+		<string>Lato-Thin.ttf</string>
 	</array>
-    
 	<key>LSApplicationCategoryType</key>
 	<string></string>
 	<key>UILaunchStoryboardName</key>
@@ -66,10 +67,10 @@
 	<array>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 	</array>
-    <key>NSAppTransportSecurity</key>
-    <dict>
-        <key>NSAllowsArbitraryLoads</key>
-        <true/>
-    </dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
