@@ -1,5 +1,5 @@
 
-# Pocketqube
+# PockeQube
 
 #### Installation
 
@@ -22,7 +22,7 @@ pod update
 
 #### Execute 
 
-Open PocketQube project (Pockecube.xcworkspace) and select run(menu or ctrl + R)
+Open PocketQube project (Pockecube.xcworkspace) and select run (menu or ctrl + R)
 
 ##### Author
 
