@@ -7,5 +7,7 @@ target 'Escola em Casa' do
 
   # Pods for Escola em Casa
   pod 'SwiftLint'
+  pod 'paper-onboarding'
+  pod 'SnapKit'
 
 end

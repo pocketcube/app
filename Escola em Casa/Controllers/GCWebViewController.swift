@@ -3,15 +3,9 @@ import WebKit
 
 class GCWebViewController: UIViewController, WKNavigationDelegate, WKUIDelegate {
 
-    // MARK: - Properties
+    // MARK: - Propeties
 
     @IBOutlet weak var activity: UIActivityIndicatorView!
-
-//    lazy var webView: WKWebView = {
-//        let webview = WKWebView(frame: view.bounds)
-//
-//        return webview\
-//    }()
 
     var webView: WKWebView!
 
