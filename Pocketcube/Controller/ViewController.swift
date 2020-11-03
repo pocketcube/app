@@ -38,6 +38,19 @@ class ViewController: UIViewController {
         return label
     }()
 
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.itemSize = CGSize(width: 180, height: 180)
+
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.identifier)
+        collectionView.backgroundColor = .clear
+
+        return collectionView
+    }()
+
     lazy var progressComponent: RadialProgressComponent = {
         let component = RadialProgressComponent(frame: CGRect(x: view.center.x, y: view.center.y, width: 100, height: 100))
         component.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
@@ -54,27 +67,22 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setup()
 
-        view.backgroundColor = .black
+//        view.backgroundColor = .clear
         view.setGradientBackground()
-//
-//        let progressComponent = RadialProgressComponent(frame: CGRect(x: view.center.x, y: view.center.y, width: 100, height: 100))
-//        progressComponent.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
-//        progressComponent.progressView.trackColor = .white
-
-        view.addSubview(progressComponent)
+        view.addSubview(collectionView)
         view.addSubview(titleLabel)
-
-        progressComponent.progressView.setProgressWithAnimation(duration: 2.0, value: 0.8)
-        progressComponent.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.width.height.greaterThanOrEqualTo(100)
-        }
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(50)
             $0.width.equalTo(200)
             $0.height.equalTo(70)
+        }
+
+        collectionView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalTo(800)
+            $0.height.greaterThanOrEqualTo(500)
         }
     }
 
@@ -83,6 +91,58 @@ class ViewController: UIViewController {
     }
 }
 
+class ItemCell: UICollectionViewCell {
+
+    static let identifier = "ItemCell"
+
+    lazy var progressComponent: RadialProgressComponent = {
+        let component = RadialProgressComponent(frame: CGRect(x: contentView.center.x, y: contentView.center.y, width: 180, height: 180))
+        component.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
+        component.progressView.trackColor = .white
+
+        return component
+    }()
+
+    lazy var cardView: CardView = {
+        let component = CardView()
+        return component
+    }()
+
+    func setup() {
+        addSubview(cardView)
+        cardView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(10)
+        }
+    }
+}
+
+extension ViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifier, for: indexPath) as! ItemCell
+        cell.setup()
+
+        return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 300.0, height: 300.0)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 25, left: 5, bottom: 25, right: 5)
+    }
+
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 2
+    }
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 4
+    }
+}
+
+extension ViewController: UICollectionViewDelegate {  }
 
 extension ViewController: NetworkManagerDelegate {
 
