@@ -28,6 +28,7 @@
 		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
 		AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */; };
 		AD70C73D253B74ED00AD563A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70C73C253B74ED00AD563A /* Config.swift */; };
+		AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD835EDB2555E1E000290C41 /* Pressure.swift */; };
 		AD9CFDC225419FC00088694A /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC125419FC00088694A /* Temperature.swift */; };
 		AD9CFDCA25419FEA0088694A /* MQTTKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC925419FEA0088694A /* MQTTKeys.swift */; };
 		AD9CFDCF2541A00B0088694A /* SensorKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDCE2541A00B0088694A /* SensorKeys.swift */; };
@@ -49,6 +50,8 @@
 		ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB592B2530CF4800F05BA6 /* ColorFactory.swift */; };
 		ADAB59312530CFB700F05BA6 /* TemTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59302530CFB700F05BA6 /* TemTheme.swift */; };
 		ADAB59372530CFE700F05BA6 /* BikeItauTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADAB59362530CFE700F05BA6 /* BikeItauTheme.swift */; };
+		ADB20DDB255DE61100D5128B /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB20DDA255DE61100D5128B /* AboutViewController.swift */; };
+		ADB20DE0255DE62600D5128B /* SensorDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADB20DDF255DE62600D5128B /* SensorDetailViewController.swift */; };
 		E774BDFD43ADA3FEF9BE63B7 /* Pods_PocketcubeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE1374C3B25CE8F878F3D60B /* Pods_PocketcubeTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,7 @@
 		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiaProgressComponent.swift; sourceTree = "<group>"; };
 		AD70C73C253B74ED00AD563A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		AD835EDB2555E1E000290C41 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
 		AD9CFDC125419FC00088694A /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		AD9CFDC925419FEA0088694A /* MQTTKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTKeys.swift; sourceTree = "<group>"; };
 		AD9CFDCE2541A00B0088694A /* SensorKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorKeys.swift; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		ADAB592B2530CF4800F05BA6 /* ColorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorFactory.swift; sourceTree = "<group>"; };
 		ADAB59302530CFB700F05BA6 /* TemTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemTheme.swift; sourceTree = "<group>"; };
 		ADAB59362530CFE700F05BA6 /* BikeItauTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeItauTheme.swift; sourceTree = "<group>"; };
+		ADB20DDA255DE61100D5128B /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		ADB20DDF255DE62600D5128B /* SensorDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailViewController.swift; sourceTree = "<group>"; };
 		B381345D03481C79B82874C2 /* Pods-Pocketcube-PocketcubeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube-PocketcubeUITests.debug.xcconfig"; path = "Target Support Files/Pods-Pocketcube-PocketcubeUITests/Pods-Pocketcube-PocketcubeUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D1671C999A26877E8BBF4894 /* Pods-PocketcubeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PocketcubeTests.debug.xcconfig"; path = "Target Support Files/Pods-PocketcubeTests/Pods-PocketcubeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		D24B5CA5B34F6BA538950C98 /* Pods-Pocketcube.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pocketcube.release.xcconfig"; path = "Target Support Files/Pods-Pocketcube/Pods-Pocketcube.release.xcconfig"; sourceTree = "<group>"; };
@@ -209,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				AD9CFDC125419FC00088694A /* Temperature.swift */,
+				AD835EDB2555E1E000290C41 /* Pressure.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -359,6 +366,8 @@
 			isa = PBXGroup;
 			children = (
 				ADAB58CC2530C90300F05BA6 /* ViewController.swift */,
+				ADB20DDA255DE61100D5128B /* AboutViewController.swift */,
+				ADB20DDF255DE62600D5128B /* SensorDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -658,6 +667,7 @@
 			files = (
 				AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */,
 				AD9CFDCF2541A00B0088694A /* SensorKeys.swift in Sources */,
+				AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */,
 				AD41EEDD25331A030041655B /* Coordinator.swift in Sources */,
 				ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */,
 				AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */,
@@ -667,6 +677,7 @@
 				AD9CFDD42541A03A0088694A /* SensorFactory.swift in Sources */,
 				ADAB58CD2530C90300F05BA6 /* ViewController.swift in Sources */,
 				ADAB59012530C9E000F05BA6 /* BaseColor.swift in Sources */,
+				ADB20DDB255DE61100D5128B /* AboutViewController.swift in Sources */,
 				ADAB59212530CE1800F05BA6 /* BikeItauColor.swift in Sources */,
 				ADAB590E2530CA6700F05BA6 /* TemColorScaled.swift in Sources */,
 				AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */,
@@ -676,6 +687,7 @@
 				AD9CFDCA25419FEA0088694A /* MQTTKeys.swift in Sources */,
 				ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */,
 				ADAB59262530CE3300F05BA6 /* ThemesManager.swift in Sources */,
+				ADB20DE0255DE62600D5128B /* SensorDetailViewController.swift in Sources */,
 				ADAB59092530CA0300F05BA6 /* TemColor.swift in Sources */,
 				AD70C73D253B74ED00AD563A /* Config.swift in Sources */,
 				AD41EECB253319480041655B /* ProgressView.swift in Sources */,

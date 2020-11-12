@@ -26,6 +26,13 @@ class ViewController: UIViewController {
 
     // MARK: - Properties
 
+    private lazy var doubleTap: UITapGestureRecognizer = {
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.buttonClicked))
+        gesture.numberOfTapsRequired = 2
+
+        return gesture
+    }()
+
     var counter = 0
 
     lazy var titleLabel: UILabel = {
@@ -33,7 +40,7 @@ class ViewController: UIViewController {
         label.text = "POCKETCUBE"
         label.textAlignment = .center
         label.textColor = .white
-        label.font = AppFont.regular.size(20)
+        label.font = AppFont.regular.size(46)
 
         return label
     }()
@@ -63,19 +70,31 @@ class ViewController: UIViewController {
         return .lightContent
     }
 
+    @objc func buttonClicked() {
+        let vc = SensorDetailViewController()
+//        vc.modalPresentationStyle = .overFullScreen
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+//        vc.view.frame = view.frame
+
+        self.navigationController?.present(vc, animated: true, completion: nil)
+   }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+//
         setup()
 
 //        view.backgroundColor = .clear
         view.setGradientBackground()
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
+        view.addGestureRecognizer(doubleTap)
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().inset(50)
-            $0.width.equalTo(200)
+            $0.width.equalTo(400)
             $0.height.equalTo(70)
         }
 
@@ -95,13 +114,13 @@ class ItemCell: UICollectionViewCell {
 
     static let identifier = "ItemCell"
 
-    lazy var progressComponent: RadialProgressComponent = {
-        let component = RadialProgressComponent(frame: CGRect(x: contentView.center.x, y: contentView.center.y, width: 180, height: 180))
-        component.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
-        component.progressView.trackColor = .white
-
-        return component
-    }()
+//    lazy var progressComponent: RadialProgressComponent = {
+//        let component = RadialProgressComponent(frame: CGRect(x: contentView.center.x, y: contentView.center.y, width: 180, height: 180))
+//        component.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
+//        component.progressView.trackColor = .white
+//
+//        return component
+//    }()
 
     lazy var cardView: CardView = {
         let component = CardView()
@@ -150,10 +169,15 @@ extension ViewController: NetworkManagerDelegate {
         if let content = data as? [String: String] {
             let sensorData = SensorFactory(key: content["topic"] ?? "").getValue(content["topic"] ?? "", payload: content["payload"] ?? "")
 
-            if let value = sensorData as? Temperature {
+            if let temperature = sensorData as? Temperature {
                 DispatchQueue.main.async {
-                    self.progressComponent.valueLabel.text = "\(value.temp)"
+                    let indexPath = IndexPath(item: 0, section: 1)
+                    if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
+                        cell.cardView.valueLabel.text = "\(temperature.temp)"
+                    }
                 }
+            } else if let pressure = sensorData as? Pressure {
+                
             }
 
         } else {
