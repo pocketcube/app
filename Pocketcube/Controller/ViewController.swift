@@ -77,7 +77,7 @@ class ViewController: UIViewController {
         vc.modalTransitionStyle = .crossDissolve
 //        vc.view.frame = view.frame
 
-        self.navigationController?.present(vc, animated: true, completion: nil)
+        self.navigationController?.present(AboutViewController(), animated: true, completion: nil)
    }
 
     override func viewDidLoad() {

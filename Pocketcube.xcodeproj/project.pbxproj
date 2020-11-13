@@ -25,6 +25,7 @@
 		AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EED0253319800041655B /* UIView+Extensions.swift */; };
 		AD41EEDD25331A030041655B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEDC25331A030041655B /* Coordinator.swift */; };
 		AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEE425331A0B0041655B /* AppCoordinator.swift */; };
+		AD5F2738255E9AFA00E4442F /* ChartDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */; };
 		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
 		AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */; };
 		AD70C73D253B74ED00AD563A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70C73C253B74ED00AD563A /* Config.swift */; };
@@ -94,6 +95,7 @@
 		AD41EED0253319800041655B /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		AD41EEDC25331A030041655B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41EEE425331A0B0041655B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDrawer.swift; sourceTree = "<group>"; };
 		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiaProgressComponent.swift; sourceTree = "<group>"; };
 		AD70C73C253B74ED00AD563A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -248,9 +250,18 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		AD5F2736255E9AE800E4442F /* Chart */ = {
+			isa = PBXGroup;
+			children = (
+				AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */,
+			);
+			path = Chart;
+			sourceTree = "<group>";
+		};
 		AD70C73B253B74D500AD563A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				AD5F2736255E9AE800E4442F /* Chart */,
 				AD70C73C253B74ED00AD563A /* Config.swift */,
 			);
 			path = Manager;
@@ -690,6 +701,7 @@
 				ADB20DE0255DE62600D5128B /* SensorDetailViewController.swift in Sources */,
 				ADAB59092530CA0300F05BA6 /* TemColor.swift in Sources */,
 				AD70C73D253B74ED00AD563A /* Config.swift in Sources */,
+				AD5F2738255E9AFA00E4442F /* ChartDrawer.swift in Sources */,
 				AD41EECB253319480041655B /* ProgressView.swift in Sources */,
 				AD41EEBA25326A8A0041655B /* CardComponent.swift in Sources */,
 				ADAB59372530CFE700F05BA6 /* BikeItauTheme.swift in Sources */,

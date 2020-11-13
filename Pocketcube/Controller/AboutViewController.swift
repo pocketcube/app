@@ -6,25 +6,34 @@
 //
 
 import UIKit
+import Charts
 
-class AboutViewController: UIViewController {
+
+
+class AboutViewController: UIViewController, ChartViewDelegate {
+
+
+    var drawer = ChartDrawer()
+
+    lazy var chartView: LineChartView = {
+        let view = LineChartView()
+        view.backgroundColor = .white
+        return view
+    }()
+
 
     override func viewDidLoad() {
-        super.viewDidLoad()
-        view.backgroundColor = .red
+       super.viewDidLoad()
+        setup()
+        drawer.createSimpleChart(lineChartView: chartView)
 
-        // Do any additional setup after loading the view.
     }
-    
 
-    /*
-    // MARK: - Navigation
+    private func setup() {
+        view.addSubview(chartView)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        chartView.snp.makeConstraints {
+            $0.edges.equalToSuperview().inset(20)
+        }
     }
-    */
-
 }

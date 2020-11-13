@@ -8,6 +8,8 @@ target 'Pocketcube' do
   # Pods for Pocketcube
   pod 'SnapKit'
   pod 'Socket.IO-Client-Swift', '~> 15.2.0'
+  pod 'Charts'
+
 
   target 'PocketcubeTests' do
     inherit! :search_paths

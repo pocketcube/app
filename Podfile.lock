@@ -1,24 +1,30 @@
 PODS:
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - SnapKit (5.0.1)
   - Socket.IO-Client-Swift (15.2.0):
     - Starscream (~> 3.1)
   - Starscream (3.1.1)
 
 DEPENDENCIES:
+  - Charts
   - SnapKit
   - Socket.IO-Client-Swift (~> 15.2.0)
 
 SPEC REPOS:
   trunk:
+    - Charts
     - SnapKit
     - Socket.IO-Client-Swift
     - Starscream
 
 SPEC CHECKSUMS:
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   Socket.IO-Client-Swift: 1e3e3a1f09f3312a167f0d781eb2f383d477357c
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: 13e8ae55f4d4a3fa0a267f9965d0d9972413f4e4
+PODFILE CHECKSUM: 48716def7c089739c678c0ba48231c4a24b47ab2
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3
