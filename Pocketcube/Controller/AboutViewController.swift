@@ -41,6 +41,13 @@ class AboutViewController: UIViewController, AboutItemViewDelegate {
         return blurEffectView
     }()
 
+    lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.7
+
+        return view
+    }()
 
     // MARK: - Actions
 
@@ -56,15 +63,14 @@ class AboutViewController: UIViewController, AboutItemViewDelegate {
     }
 
     private func setupView() {
-//        view.addSubview(backgroundView)
-        view.addSubview(blurEffectView)
+        view.addSubview(backgroundView)
         view.addSubview(cardView)
 
         cardView.addSubview(aboutItemView)
     }
 
     private func setupConstraints() {
-        blurEffectView.snp.makeConstraints {
+        backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
 

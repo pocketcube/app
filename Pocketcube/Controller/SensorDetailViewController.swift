@@ -10,6 +10,7 @@ import SnapKit
 
 class SensorDetailViewController: UIViewController, AboutItemViewDelegate {
 
+    // MARK: - Properties
 
     lazy var sensorItemView: SensorDetailView = {
         let view = SensorDetailView(frame: .zero)
@@ -29,7 +30,6 @@ class SensorDetailViewController: UIViewController, AboutItemViewDelegate {
         return view
     }()
 
-
     lazy var blurEffectView: UIVisualEffectView = {
         let effect = UIBlurEffect(style: .extraLight)
         let blurEffectView = UIVisualEffectView(effect: effect)
@@ -38,6 +38,14 @@ class SensorDetailViewController: UIViewController, AboutItemViewDelegate {
         blurEffectView.layer.cornerRadius = 5
 
         return blurEffectView
+    }()
+
+    lazy var backgroundView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .black
+        view.alpha = 0.7
+
+        return view
     }()
 
     override func viewDidLoad() {
@@ -59,14 +67,14 @@ class SensorDetailViewController: UIViewController, AboutItemViewDelegate {
     }
 
     private func setupView() {
-        view.addSubview(blurEffectView)
+        view.addSubview(backgroundView)
         view.addSubview(cardView)
 
         cardView.addSubview(sensorItemView)
     }
 
     private func setupConstraints() {
-        blurEffectView.snp.makeConstraints {
+        backgroundView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
 

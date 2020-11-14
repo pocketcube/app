@@ -9,22 +9,11 @@ import UIKit
 import SnapKit
 import SocketIO
 
-enum AppFont: String {
-    case light = "Light"
-    case regular = "Regular"
-    case bold = "Bold"
-
-    func size(_ size: CGFloat) -> UIFont {
-        if let font = UIFont(name: "Lato-Bold", size: size + 1.0) {
-            return font
-        }
-        fatalError("Font 'Lato-Bold.ttf' does not exist.")
-    }
-}
-
 class ViewController: UIViewController {
 
     // MARK: - Properties
+
+    var counter = 0
 
     private lazy var doubleTap: UITapGestureRecognizer = {
         let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.buttonClicked))
@@ -32,8 +21,6 @@ class ViewController: UIViewController {
 
         return gesture
     }()
-
-    var counter = 0
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -43,6 +30,19 @@ class ViewController: UIViewController {
         label.font = AppFont.regular.size(46)
 
         return label
+    }()
+
+    lazy var menuItem: UIButton = {
+        let view = UIButton()
+        view.backgroundColor = .red
+        return view
+    }()
+
+    lazy var menuStackView: UIStackView = {
+        let view = UIStackView()
+        view.backgroundColor = .red
+
+        return view
     }()
 
     lazy var collectionView: UICollectionView = {
@@ -72,23 +72,20 @@ class ViewController: UIViewController {
 
     @objc func buttonClicked() {
         Downloader.download(self)
-//        let vc = AboutViewController()
-//
-//        vc.modalPresentationStyle = .overFullScreen
-//        vc.modalTransitionStyle = .crossDissolve
-//
-//        self.navigationController?.present(vc, animated: true, completion: nil)
-   }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
 
         view.setGradientBackground()
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
+        view.addSubview(menuStackView)
         view.addGestureRecognizer(doubleTap)
+
+        menuStackView.addArrangedSubview(menuItem)
+        menuStackView.addArrangedSubview(menuItem)
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -101,6 +98,23 @@ class ViewController: UIViewController {
             $0.center.equalToSuperview()
             $0.width.equalTo(800)
             $0.height.greaterThanOrEqualTo(500)
+        }
+
+        menuStackView.snp.makeConstraints {
+            $0.centerY.equalTo(titleLabel.snp.centerY)
+            $0.trailing.equalToSuperview().inset(30)
+            $0.height.equalTo(70)
+            $0.width.lessThanOrEqualTo(50)
+        }
+
+        menuItem.snp.makeConstraints {
+            $0.height.equalToSuperview()
+            $0.width.equalTo(30)
+        }
+
+        menuItem.snp.makeConstraints {
+            $0.height.equalToSuperview()
+            $0.width.equalTo(30)
         }
     }
 
@@ -171,6 +185,7 @@ extension ViewController: NetworkManagerDelegate {
             let sensorData = SensorFactory(key: content["topic"] ?? "").getValue(content["topic"] ?? "", payload: content["payload"] ?? "")
 
             if let temperature = sensorData as? Temperature {
+                DataManager.temperature.append(temperature)
                 DispatchQueue.main.async {
                     let indexPath = IndexPath(item: 0, section: 0)
                     if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
@@ -178,6 +193,7 @@ extension ViewController: NetworkManagerDelegate {
                     }
                 }
             } else if let oxygen = sensorData as? Oxygen {
+                DataManager.oxygen.append(oxygen)
                 DispatchQueue.main.async {
                     let indexPath = IndexPath(item: 1, section: 0)
                     if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {

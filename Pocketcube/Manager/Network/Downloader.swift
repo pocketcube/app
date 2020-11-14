@@ -9,23 +9,6 @@ import UIKit
 
 class Downloader {
 
-    class func load(URL: URL) {
-        let sessionConfig = URLSessionConfiguration.default
-        let session = URLSession(configuration: sessionConfig, delegate: nil, delegateQueue: nil)
-        let request = NSMutableURLRequest(url: URL as URL)
-        request.httpMethod = "GET"
-
-        let task = session.dataTask(with: request as URLRequest, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            if (error == nil) {
-                debugPrint("")
-            } else {
-                debugPrint("Deu ruim")
-            }
-        })
-
-        task.resume()
-    }
-
     static func download(_ viewController: UIViewController) {
         let fileName = "Teste - \(arc4random()).pdf"
         let documentsUrl: URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
@@ -43,7 +26,6 @@ class Downloader {
                 do {
                     try FileManager.default.copyItem(at: tempLocalUrl, to: destinationFileUrl)
                     do {
-                        //Show UIActivityViewController to save the downloaded file
                         let contents  = try FileManager.default.contentsOfDirectory(at: documentsUrl, includingPropertiesForKeys: nil, options: .skipsHiddenFiles)
                         for indexx in 0..<contents.count {
                             if contents[indexx].lastPathComponent == destinationFileUrl.lastPathComponent {
@@ -52,7 +34,7 @@ class Downloader {
                                     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.phone ) {
                                         viewController.present(avc, animated: true, completion: nil)
                                     } else {
-                                        var popoverCntlr = UIPopoverController(contentViewController: avc)
+                                        let popoverCntlr = UIPopoverController(contentViewController: avc)
                                         popoverCntlr.present(from: CGRect(x: viewController.view.frame.size.width/2, y: viewController.view.frame.size.height/4, width: 0, height: 0),  in: viewController.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
                                     }
                                 }

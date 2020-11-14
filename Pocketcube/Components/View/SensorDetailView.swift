@@ -9,13 +9,17 @@ import UIKit
 import SnapKit
 import Charts
 
+struct ChartColors {
+    static var lineColor = UIColor(red: 0.52, green: 0.36, blue: 0.97, alpha: 1.00)
+    static var background = UIColor(red: 0.09, green: 0.10, blue: 0.20, alpha: 1.00)
+    static var fillColor = UIColor(red: 0.89, green: 0.54, blue: 0.95, alpha: 1.00)
+}
+
 class SensorDetailView: UIView {
 
     // MARK: - Properties
 
     weak var delegate: AboutItemViewDelegate?
-
-//    private var drawer = ChartDrawer()
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -24,9 +28,8 @@ class SensorDetailView: UIView {
         setupSubviews()
         setupConstraints()
 
-
         buildChart()
-        setDataCount(45, range: 100)
+        setDataCount()
     }
 
     required init?(coder: NSCoder) {
@@ -37,7 +40,7 @@ class SensorDetailView: UIView {
         let stackView = UIStackView()
         stackView.axis = .vertical
         stackView.alignment = .trailing
-        stackView.spacing = 20
+        stackView.spacing = 10
 
         return stackView
     }()
@@ -51,7 +54,7 @@ class SensorDetailView: UIView {
 
     lazy var chartCardView: UIView = {
         let view = UIView()
-        view.backgroundColor = .white
+        view.backgroundColor = ChartColors.background
         view.layer.cornerRadius = 10
 
         return view
@@ -107,56 +110,55 @@ class SensorDetailView: UIView {
         chartView.delegate = self
 
         chartView.setViewPortOffsets(left: 0, top: 20, right: 0, bottom: 0)
-        chartView.backgroundColor = .white //UIColor(red: 104/255, green: 241/255, blue: 175/255, alpha: 1)
+        chartView.backgroundColor = ChartColors.background
 
         chartView.dragEnabled = true
         chartView.setScaleEnabled(true)
         chartView.pinchZoomEnabled = true
+        chartView.marker = ChartMarker()
         chartView.maxHighlightDistance = 300
-
-
-
+//        chartView.
 
         chartView.xAxis.enabled = false
 
         let yAxis = chartView.leftAxis
-        yAxis.labelFont = UIFont(name: "HelveticaNeue-Light", size:12)!
+        yAxis.labelFont = AppFont.bold.size(14)// UIFont(name: "HelveticaNeue-Light", size:12)!
         yAxis.setLabelCount(6, force: false)
         yAxis.labelTextColor = .white
         yAxis.labelPosition = .insideChart
-        yAxis.axisLineColor = .white
+        yAxis.drawGridLinesEnabled = false
+
 
         chartView.rightAxis.enabled = false
         chartView.legend.enabled = false
-
-
-        chartView.animate(xAxisDuration: 2, yAxisDuration: 2)
     }
 
-    func setDataCount(_ count: Int, range: UInt32) {
+    func setDataCount() {
+        var dataSet: [ChartDataEntry] = []
 
-        let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
-            let mult = range + 1
-            let val = Double(arc4random_uniform(mult) + 20)
-            return ChartDataEntry(x: Double(i), y: val)
+        for (index, element) in DataManager.temperature.enumerated() {
+            let entry = ChartDataEntry(x: Double(index), y: Double(element.temp))
+            dataSet.append(entry)
         }
 
-        let set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
+        let set1 = LineChartDataSet(entries: dataSet, label: "DataSet 1")
         set1.mode = .cubicBezier
-        set1.drawCirclesEnabled = false
+        set1.drawCirclesEnabled = true
         set1.drawFilledEnabled = true
         set1.lineWidth = 1.8
         set1.circleRadius = 4
         set1.setCircleColor(.white)
         set1.setColor(darkBlue)
-        set1.highlightColor = darkBlue
-        set1.fillColor = darkBlue
+        set1.circleHoleColor = .white
+        set1.circleHoleRadius = 5
+        set1.highlightColor = .white
+        set1.fillColor = ChartColors.fillColor
         set1.fillAlpha = 1
         set1.drawHorizontalHighlightIndicatorEnabled = true
 
-//        let gradient = CGGradient(colorsSpace: nil, colors: [darkBlue.cgColor, UIColor.white.cgColor] as CFArray, locations: [1.0, 0.0])
+        let gradient = CGGradient(colorsSpace: nil, colors: [ChartColors.fillColor.cgColor, ChartColors.background.cgColor] as CFArray, locations: [1.0, 0.0])
 
-//        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
+        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
         let data = LineChartData(dataSet: set1)
         data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 9)!)
         data.setDrawValues(false)
@@ -166,19 +168,75 @@ class SensorDetailView: UIView {
 
 }
 
+class ChartMarker: MarkerView {
+
+    // MARK: - Propeties
+
+    var text = ""
+
+    override func refreshContent(entry: ChartDataEntry, highlight: Highlight) {
+        super.refreshContent(entry: entry, highlight: highlight)
+        text = String(entry.y)
+    }
+
+    override func draw(context: CGContext, point: CGPoint) {
+        super.draw(context: context, point: point)
+
+        var drawAttributes = [NSAttributedString.Key : Any]()
+        drawAttributes[.font] = AppFont.bold.size(14)
+        drawAttributes[.foregroundColor] = ChartColors.background
+        drawAttributes[.backgroundColor] = UIColor.white
+
+        self.bounds.size = (" \(text) " as NSString).size(withAttributes: drawAttributes)
+        self.offset = CGPoint(x: 0, y: -self.bounds.size.height - 2)
+
+        let offset = self.offsetForDrawing(atPoint: point)
+
+        drawText(
+            text: "\(text)  TETSTETS\n 43343 " as NSString,
+            rect: CGRect(origin: CGPoint(x: point.x + offset.x, y: point.y + offset.y),
+            size: self.bounds.size),
+            withAttributes: drawAttributes
+        )
+    }
+
+    func drawText(text: NSString, rect: CGRect, withAttributes attributes: [NSAttributedString.Key : Any]? = nil) {
+        let size = text.size(withAttributes: attributes)
+        let centeredRect = CGRect(
+            x: rect.origin.x + (rect.size.width - size.width) / 2.0,
+            y: rect.origin.y + (rect.size.height - size.height) / 2.0,
+            width: size.width,
+            height: size.height
+        )
+
+        text.draw(in: centeredRect, withAttributes: attributes)
+    }
+}
+
 extension SensorDetailView: ChartViewDelegate {
 
+//    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
+////        let marker = IMarker(
+////            color: UIColor.black,
+////            font: AppFont.bold.size(14),
+////            textColor: UIColor.white,
+////            insets: UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
+////        )
+//
+//        let market = IM
+//
+//        marker.minimumSize = CGSize(width: 75.0, height: 35.0)
+//        chartView.marker = marker
+//    }
 }
 
 extension SensorDetailView {
 
     func setupView() {
         addSubview(stackView)
-
         chartCardView.addSubview(chartView)
 
         setupShadow()
-//        drawer.createSimpleChart(lineChartView: chartView)
     }
 
     func setupSubviews() {
@@ -195,11 +253,11 @@ extension SensorDetailView {
         }
 
         closeButton.snp.makeConstraints {
-            $0.height.width.equalTo(60)
+            $0.height.width.equalTo(40)
         }
 
         titleLabel.snp.makeConstraints {
-            $0.height.equalTo(70)
+            $0.height.equalTo(50)
             $0.width.equalToSuperview()
         }
 
