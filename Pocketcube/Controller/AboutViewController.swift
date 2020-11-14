@@ -9,31 +9,82 @@ import UIKit
 import Charts
 
 
+class AboutViewController: UIViewController, AboutItemViewDelegate {
 
-class AboutViewController: UIViewController, ChartViewDelegate {
+    // MARK: - Properties
 
+    lazy var aboutItemView: AboutItemView = {
+        let view = AboutItemView(frame: .zero)
+        view.delegate = self
 
-    var drawer = ChartDrawer()
+        return view
+    }()
 
-    lazy var chartView: LineChartView = {
-        let view = LineChartView()
-        view.backgroundColor = .white
+    lazy var cardView: UIView = {
+        let view = UIView()
+        view.layer.cornerRadius = 10.0
+        view.layer.shadowColor = UIColor.darkGray.cgColor
+        view.layer.shadowOffset = CGSize(width: 2.0, height: 1.0)
+        view.layer.shadowRadius = 5.0
+        view.layer.shadowOpacity = 0.15
+
         return view
     }()
 
 
-    override func viewDidLoad() {
-       super.viewDidLoad()
-        setup()
-        drawer.createSimpleChart(lineChartView: chartView)
+//    private lazy var backgroundView: UIView = {
+//        let view = UIView()
+//        view.backgroundColor = .black
+//        view.alpha = 0.5
+//
+//        return view
+//    }()
 
+    lazy var blurEffectView: UIVisualEffectView = {
+        let effect = UIBlurEffect(style: .extraLight)
+        let blurEffectView = UIVisualEffectView(effect: effect)
+        blurEffectView.frame = view.frame
+        blurEffectView.clipsToBounds = true
+        blurEffectView.layer.cornerRadius = 5
+
+        return blurEffectView
+    }()
+
+
+    // MARK: - Actions
+
+    func didPressCancel() {
+        dismiss(animated: true, completion: nil)
     }
 
-    private func setup() {
-        view.addSubview(chartView)
+    // MARK: - Setup
 
-        chartView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(20)
+    private func setup() {
+        setupView()
+        setupConstraints()
+    }
+
+    private func setupView() {
+//        view.addSubview(backgroundView)
+        view.addSubview(blurEffectView)
+        view.addSubview(cardView)
+
+        cardView.addSubview(aboutItemView)
+    }
+
+    private func setupConstraints() {
+        blurEffectView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
+
+        cardView.snp.makeConstraints {
+            $0.center.equalToSuperview()
+            $0.width.equalToSuperview().multipliedBy(0.6)
+            $0.height.equalTo(600)
+        }
+
+        aboutItemView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

@@ -72,20 +72,18 @@ class ViewController: UIViewController {
 
     @objc func buttonClicked() {
         let vc = SensorDetailViewController()
-//        vc.modalPresentationStyle = .overFullScreen
+
         vc.modalPresentationStyle = .overFullScreen
         vc.modalTransitionStyle = .crossDissolve
-//        vc.view.frame = view.frame
 
-        self.navigationController?.present(AboutViewController(), animated: true, completion: nil)
+        self.navigationController?.present(vc, animated: true, completion: nil)
    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+
         setup()
 
-//        view.backgroundColor = .clear
         view.setGradientBackground()
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
@@ -113,14 +111,6 @@ class ViewController: UIViewController {
 class ItemCell: UICollectionViewCell {
 
     static let identifier = "ItemCell"
-
-//    lazy var progressComponent: RadialProgressComponent = {
-//        let component = RadialProgressComponent(frame: CGRect(x: contentView.center.x, y: contentView.center.y, width: 180, height: 180))
-//        component.progressView.progressColor = UIColor(red: 0.16, green: 0.55, blue: 1.00, alpha: 1.00)
-//        component.progressView.trackColor = .white
-//
-//        return component
-//    }()
 
     lazy var cardView: CardView = {
         let component = CardView()
