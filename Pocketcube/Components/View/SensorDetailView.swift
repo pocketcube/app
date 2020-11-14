@@ -60,8 +60,8 @@ class SensorDetailView: UIView {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
-        label.font = AppFont.bold.size(51)
-        label.text = "PocketQube"
+        label.font = AppFont.bold.size(30)
+        label.text = "Temperature (Cº)"
         label.textColor = .white
 
         return label
@@ -70,10 +70,10 @@ class SensorDetailView: UIView {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
-        label.font = AppFont.regular.size(30)
+        label.font = AppFont.regular.size(18)
         label.numberOfLines = 3
         label.textColor = .white
-        label.text = "O projeto PocketQube é um projeto aberto.\n Contribua com nosso desenvolvimento!"
+        label.text = ""
 
         return label
     }()
@@ -134,6 +134,7 @@ class SensorDetailView: UIView {
     }
 
     func setDataCount(_ count: Int, range: UInt32) {
+
         let yVals1 = (0..<count).map { (i) -> ChartDataEntry in
             let mult = range + 1
             let val = Double(arc4random_uniform(mult) + 20)
@@ -143,21 +144,19 @@ class SensorDetailView: UIView {
         let set1 = LineChartDataSet(entries: yVals1, label: "DataSet 1")
         set1.mode = .cubicBezier
         set1.drawCirclesEnabled = false
+        set1.drawFilledEnabled = true
         set1.lineWidth = 1.8
         set1.circleRadius = 4
         set1.setCircleColor(.white)
         set1.setColor(darkBlue)
-        set1.highlightColor = .black//UIColor(red: 244/255, green: 117/255, blue: 117/255, alpha: 1)
+        set1.highlightColor = darkBlue
         set1.fillColor = darkBlue
         set1.fillAlpha = 1
         set1.drawHorizontalHighlightIndicatorEnabled = true
 
-//        let gradient = CGGradient(colorsSpace: nil, colors: [darkBlue.cgColor, UIColor.white.cgColor] as CFArray, locations: [0.0, 1.0])
-        set1.fillColor = darkBlue
-//        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 0.0)
+//        let gradient = CGGradient(colorsSpace: nil, colors: [darkBlue.cgColor, UIColor.white.cgColor] as CFArray, locations: [1.0, 0.0])
 
-//        set1.fillFormatter = CubicLineSampleFillFormatter()
-
+//        set1.fill = Fill.fillWithLinearGradient(gradient!, angle: 90.0)
         let data = LineChartData(dataSet: set1)
         data.setValueFont(UIFont(name: "HelveticaNeue-Light", size: 9)!)
         data.setDrawValues(false)

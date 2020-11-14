@@ -21,7 +21,7 @@ struct SensorFactory {
         if key == .temperature {
             return getContent(type: Temperature.self, data: payloadContent)
         } else if key == .oxygen {
-            return getContent(type: Pressure.self, data: payloadContent)
+            return getContent(type: Oxygen.self, data: payloadContent)
         }
 
         return nil

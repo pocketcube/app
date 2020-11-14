@@ -31,15 +31,6 @@ class AboutViewController: UIViewController, AboutItemViewDelegate {
         return view
     }()
 
-
-//    private lazy var backgroundView: UIView = {
-//        let view = UIView()
-//        view.backgroundColor = .black
-//        view.alpha = 0.5
-//
-//        return view
-//    }()
-
     lazy var blurEffectView: UIVisualEffectView = {
         let effect = UIBlurEffect(style: .extraLight)
         let blurEffectView = UIVisualEffectView(effect: effect)

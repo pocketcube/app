@@ -71,12 +71,13 @@ class ViewController: UIViewController {
     }
 
     @objc func buttonClicked() {
-        let vc = SensorDetailViewController()
-
-        vc.modalPresentationStyle = .overFullScreen
-        vc.modalTransitionStyle = .crossDissolve
-
-        self.navigationController?.present(vc, animated: true, completion: nil)
+        Downloader.download(self)
+//        let vc = AboutViewController()
+//
+//        vc.modalPresentationStyle = .overFullScreen
+//        vc.modalTransitionStyle = .crossDissolve
+//
+//        self.navigationController?.present(vc, animated: true, completion: nil)
    }
 
     override func viewDidLoad() {
@@ -151,7 +152,17 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-extension ViewController: UICollectionViewDelegate {  }
+extension ViewController: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = SensorDetailViewController()
+
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+}
 
 extension ViewController: NetworkManagerDelegate {
 
@@ -161,15 +172,19 @@ extension ViewController: NetworkManagerDelegate {
 
             if let temperature = sensorData as? Temperature {
                 DispatchQueue.main.async {
-                    let indexPath = IndexPath(item: 0, section: 1)
+                    let indexPath = IndexPath(item: 0, section: 0)
                     if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
                         cell.cardView.valueLabel.text = "\(temperature.temp)"
                     }
                 }
-            } else if let pressure = sensorData as? Pressure {
-                
+            } else if let oxygen = sensorData as? Oxygen {
+                DispatchQueue.main.async {
+                    let indexPath = IndexPath(item: 1, section: 0)
+                    if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
+                        cell.cardView.valueLabel.text = "\(oxygen.oxygen)"
+                    }
+                }
             }
-
         } else {
             debugPrint("deu ruim")
         }

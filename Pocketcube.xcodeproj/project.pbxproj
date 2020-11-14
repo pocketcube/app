@@ -28,6 +28,8 @@
 		AD5F2738255E9AFA00E4442F /* ChartDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */; };
 		AD650179255FF6AE009824A0 /* SensorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD650178255FF6AE009824A0 /* SensorDetailView.swift */; };
 		AD650181255FFDB7009824A0 /* AboutItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD650180255FFDB7009824A0 /* AboutItemView.swift */; };
+		AD65018625603358009824A0 /* Oxygen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65018525603358009824A0 /* Oxygen.swift */; };
+		AD65018D25603C30009824A0 /* Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65018C25603C30009824A0 /* Downloader.swift */; };
 		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
 		AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */; };
 		AD70C73D253B74ED00AD563A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70C73C253B74ED00AD563A /* Config.swift */; };
@@ -100,6 +102,8 @@
 		AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDrawer.swift; sourceTree = "<group>"; };
 		AD650178255FF6AE009824A0 /* SensorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailView.swift; sourceTree = "<group>"; };
 		AD650180255FFDB7009824A0 /* AboutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutItemView.swift; sourceTree = "<group>"; };
+		AD65018525603358009824A0 /* Oxygen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oxygen.swift; sourceTree = "<group>"; };
+		AD65018C25603C30009824A0 /* Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Downloader.swift; sourceTree = "<group>"; };
 		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiaProgressComponent.swift; sourceTree = "<group>"; };
 		AD70C73C253B74ED00AD563A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 			children = (
 				AD9CFDC125419FC00088694A /* Temperature.swift */,
 				AD835EDB2555E1E000290C41 /* Pressure.swift */,
+				AD65018525603358009824A0 /* Oxygen.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -272,9 +277,18 @@
 			path = Components/View;
 			sourceTree = "<group>";
 		};
+		AD65018A25603C0F009824A0 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AD65018C25603C30009824A0 /* Downloader.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AD70C73B253B74D500AD563A /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				AD65018A25603C0F009824A0 /* Network */,
 				AD5F2736255E9AE800E4442F /* Chart */,
 				AD70C73C253B74ED00AD563A /* Config.swift */,
 			);
@@ -692,6 +706,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */,
+				AD65018625603358009824A0 /* Oxygen.swift in Sources */,
 				AD650179255FF6AE009824A0 /* SensorDetailView.swift in Sources */,
 				AD9CFDCF2541A00B0088694A /* SensorKeys.swift in Sources */,
 				AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */,
@@ -701,6 +716,7 @@
 				ADAB59192530CDF800F05BA6 /* TembiciColor.swift in Sources */,
 				ADAB59312530CFB700F05BA6 /* TemTheme.swift in Sources */,
 				AD9CFDC225419FC00088694A /* Temperature.swift in Sources */,
+				AD65018D25603C30009824A0 /* Downloader.swift in Sources */,
 				AD9CFDD42541A03A0088694A /* SensorFactory.swift in Sources */,
 				ADAB58CD2530C90300F05BA6 /* ViewController.swift in Sources */,
 				ADAB59012530C9E000F05BA6 /* BaseColor.swift in Sources */,
