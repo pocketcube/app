@@ -34,6 +34,7 @@ class AboutItemView: UIView {
         stackView.axis = .vertical
         stackView.alignment = .trailing
         stackView.spacing = 20
+        
 
         return stackView
     }()
@@ -81,7 +82,7 @@ class AboutItemView: UIView {
         let button = UIButton()
         button.clipsToBounds = true
         button.layer.cornerRadius = 6
-        button.setImage(UIImage(named: "close_ic"), for: .normal)
+        button.setImage(UIImage(named: "ic_close"), for: .normal)
         button.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
 
         return button

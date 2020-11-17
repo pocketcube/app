@@ -16,7 +16,6 @@ class ChartDrawer {
 
     func createSimpleChart(lineChartView: LineChartView) {
         lineChartView.delegate = self
-//        lineChartView.lin
         setChart(lineChartView: lineChartView)
     }
 
@@ -24,16 +23,11 @@ class ChartDrawer {
     func setChart(lineChartView: LineChartView) {
 
         let d1 = self.loadData(values: [5, 10, 20, 23])
-//        let d2 = self.loadData(values: [0, 7, 12, 43])
-//        let d3 = self.loadData(values: [8, 45, 34, 12])
 
         let matchesDataSet = self.setChartDataSet(dataEntries: d1, color: .blue)
         matchesDataSet.mode = .cubicBezier
-//        matchesDataSet.fillFormatter = CubicLineSampleFillFormatter()
-//        let winsDataSet = self.setChartDataSet(dataEntries: d2, color: .gray)
-//        let losesDataSet = self.setChartDataSet(dataEntries: d3, color: .orange)
 
-        let chartDataSets = [matchesDataSet] //  [ matchesDataSet, winsDataSet, losesDataSet ]
+        let chartDataSets = [matchesDataSet]
         let chartData = self.setChartData(chartDataSets: chartDataSets)
 
         self.setLineChartView(lineChartView: lineChartView, chartData: chartData)
@@ -55,7 +49,6 @@ class ChartDrawer {
     // Set chart Preferences
     func setChartDataSet(dataEntries: [ChartDataEntry], color: UIColor) -> LineChartDataSet {
         let chartDataSet = LineChartDataSet(entries: dataEntries, label: "Chart")
-        let customGray = UIColor(red: 0.1765, green: 0.1765, blue: 0.1765, alpha: 1.0)
 
         chartDataSet.colors = [color]
         chartDataSet.drawCirclesEnabled = true
@@ -66,7 +59,7 @@ class ChartDrawer {
         chartDataSet.lineWidth = 4.0
         chartDataSet.mode = .cubicBezier
         chartDataSet.cubicIntensity = 0.2
-        chartDataSet.drawValuesEnabled = false // Puts value upside the line
+        chartDataSet.drawValuesEnabled = false
 
         return chartDataSet
     }
@@ -109,11 +102,6 @@ class ChartDrawer {
         axisX.labelTextColor = UIColor.gray
         axisX.gridLineWidth = 1.0
         axisX.axisLineWidth = 0
-
-        // Add Labels to Chart
-//        let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-//        axisX.valueFormatter = IndexAxisValueFormatter(values:months)
-//        axisX.granularity = 1
 
         // Axis Y
         let rightAxisY = lineChartView.rightAxis

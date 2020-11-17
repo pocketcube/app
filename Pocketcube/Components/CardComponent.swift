@@ -12,11 +12,31 @@ class CardView: UIView {
 
     // MARK: - Properties
 
+    lazy var titleLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Temperature"
+        label.textColor = .white
+        label.font = AppFont.regular.size(18)
+        label.textAlignment = .center
+
+        return label
+    }()
+
     lazy var valueLabel: UILabel = {
         let label = UILabel()
-        label.text = "20"
+        label.text = "-"
         label.textColor = .white
         label.font = AppFont.regular.size(40)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    lazy var metricsLabel: UILabel = {
+        let label = UILabel()
+        label.text = "ºC"
+        label.textColor = .white
+        label.font = AppFont.regular.size(26)
         label.textAlignment = .center
 
         return label
@@ -34,6 +54,7 @@ class CardView: UIView {
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
+        stackView.distribution = .fill
         stackView.alignment = .center
         stackView.spacing = 10
         stackView.axis = .vertical
@@ -46,22 +67,33 @@ class CardView: UIView {
     init() {
         super.init(frame: CGRect.zero)
         addShadows()
+
         addSubview(blurEffectView)
 
-        stackView.addSubview(valueLabel)
-        blurEffectView.contentView.addSubview(stackView)
+        stackView.addArrangedSubview(titleLabel)
+        stackView.addArrangedSubview(valueLabel)
+        stackView.addArrangedSubview(metricsLabel)
 
+        addSubview(stackView)
 
         blurEffectView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
 
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().inset(8)
+        }
+
+        titleLabel.snp.makeConstraints {
+            $0.width.equalToSuperview()
         }
 
         valueLabel.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.width.equalToSuperview()
+        }
+
+        valueLabel.snp.makeConstraints {
+            $0.width.equalToSuperview()
         }
     }
 

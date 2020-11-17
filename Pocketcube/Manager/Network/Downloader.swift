@@ -10,10 +10,10 @@ import UIKit
 class Downloader {
 
     static func download(_ viewController: UIViewController) {
-        let fileName = "Teste - \(arc4random()).pdf"
+        let fileName = "Teste - \(arc4random()).csv"
         let documentsUrl: URL =  FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
         let destinationFileUrl = documentsUrl.appendingPathComponent("\(fileName)")
-        let fileURL = URL(string: "https://www.scitepress.org/Papers/2018/67983/67983.pdf")
+        let fileURL = URL(string: "http://0.0.0.0:5000/download")
         let sessionConfig = URLSessionConfiguration.default
         let session = URLSession(configuration: sessionConfig)
         let request = URLRequest(url:fileURL!)

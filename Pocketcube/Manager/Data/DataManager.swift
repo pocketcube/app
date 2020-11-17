@@ -12,4 +12,6 @@ struct DataManager {
     static var temperature: [Temperature] = []
     static var pressure: [Temperature] = []
     static var oxygen: [Oxygen] = []
+
+    static var atmosphericItems: [AtmosphericData] = []
 }

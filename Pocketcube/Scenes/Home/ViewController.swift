@@ -64,7 +64,6 @@ class ViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.identifier)
         collectionView.backgroundColor = .clear
-//        collectionVie
 
         return collectionView
     }()
@@ -132,7 +131,7 @@ class ItemCell: UICollectionViewCell {
     }()
 
     func setup() {
-        addSubview(cardView)
+        contentView.addSubview(cardView)
         cardView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(10)
         }
@@ -185,6 +184,7 @@ extension ViewController: NetworkManagerDelegate {
 
             if let data = sensorData as? AtmosphericData {
                 DispatchQueue.main.async {
+                    DataManager.atmosphericItems.append(data)
                     if let temperature = data.temperature {
                         self.updateItem(item: 0, section: 0, value: temperature)
                     } else if let pressure = data.pressure {

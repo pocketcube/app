@@ -117,12 +117,11 @@ class SensorDetailView: UIView {
         chartView.pinchZoomEnabled = true
         chartView.marker = ChartMarker()
         chartView.maxHighlightDistance = 300
-//        chartView.
 
         chartView.xAxis.enabled = false
 
         let yAxis = chartView.leftAxis
-        yAxis.labelFont = AppFont.bold.size(14)// UIFont(name: "HelveticaNeue-Light", size:12)!
+        yAxis.labelFont = AppFont.bold.size(14) 
         yAxis.setLabelCount(6, force: false)
         yAxis.labelTextColor = .white
         yAxis.labelPosition = .insideChart
@@ -136,9 +135,11 @@ class SensorDetailView: UIView {
     func setDataCount() {
         var dataSet: [ChartDataEntry] = []
 
-        for (index, element) in DataManager.temperature.enumerated() {
-            let entry = ChartDataEntry(x: Double(index), y: element.temperature)
-            dataSet.append(entry)
+        for (index, element) in DataManager.atmosphericItems.enumerated() {
+            if let item = element.temperature {
+                let entry = ChartDataEntry(x: Double(index), y: item)
+                dataSet.append(entry)
+            }
         }
 
         let set1 = LineChartDataSet(entries: dataSet, label: "DataSet 1")
@@ -213,22 +214,7 @@ class ChartMarker: MarkerView {
     }
 }
 
-extension SensorDetailView: ChartViewDelegate {
-
-//    func chartValueSelected(_ chartView: ChartViewBase, entry: ChartDataEntry, highlight: Highlight) {
-////        let marker = IMarker(
-////            color: UIColor.black,
-////            font: AppFont.bold.size(14),
-////            textColor: UIColor.white,
-////            insets: UIEdgeInsets(top: 7.0, left: 7.0, bottom: 7.0, right: 7.0)
-////        )
-//
-//        let market = IM
-//
-//        marker.minimumSize = CGSize(width: 75.0, height: 35.0)
-//        chartView.marker = marker
-//    }
-}
+extension SensorDetailView: ChartViewDelegate { }
 
 extension SensorDetailView {
 
