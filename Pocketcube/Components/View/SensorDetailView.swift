@@ -137,7 +137,7 @@ class SensorDetailView: UIView {
         var dataSet: [ChartDataEntry] = []
 
         for (index, element) in DataManager.temperature.enumerated() {
-            let entry = ChartDataEntry(x: Double(index), y: Double(element.temp))
+            let entry = ChartDataEntry(x: Double(index), y: element.temperature)
             dataSet.append(entry)
         }
 

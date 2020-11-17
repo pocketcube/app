@@ -8,5 +8,5 @@
 import Foundation
 
 struct Temperature: Decodable {
-    var temp: Double
+    var temperature: Double
 }

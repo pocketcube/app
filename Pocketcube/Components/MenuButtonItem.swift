@@ -15,9 +15,8 @@ class MenuButtonItem: UIView {
     lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = AppFont.regular.size(18)
+        label.font = AppFont.regular.size(12)
         label.textAlignment = .center
-        label.text = "dube87437"
 
         return label
     }()
@@ -34,13 +33,15 @@ class MenuButtonItem: UIView {
 
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+
         return imageView
     }()
 
     lazy var stackView: UIStackView = {
         let stackView = UIStackView()
         stackView.alignment = .center
-        stackView.spacing = 10
+        stackView.spacing = 5
         stackView.axis = .vertical
 
         return stackView
@@ -55,10 +56,13 @@ class MenuButtonItem: UIView {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(descriptionLabel)
 
-        backgroundColor = .red
+        blurEffectView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
 
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.edges.equalToSuperview().inset(4)
+            $0.width.greaterThanOrEqualTo(100)
         }
 
         imageView.snp.makeConstraints {
@@ -66,7 +70,7 @@ class MenuButtonItem: UIView {
         }
 
         descriptionLabel.snp.makeConstraints {
-            $0.height.equalTo(15)
+            $0.height.equalTo(20)
             $0.width.equalToSuperview().inset(8)
         }
     }

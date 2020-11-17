@@ -8,5 +8,5 @@
 import Foundation
 
 struct Pressure: Decodable {
-    var pressure: String
+    var pressure: Double
 }

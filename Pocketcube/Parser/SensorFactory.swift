@@ -18,13 +18,14 @@ struct SensorFactory {
     func getValue(_ stringfiedData: String, payload: String) -> Any? {
         guard let payloadContent = payload.data(using: .utf8) else { fatalError() }
 
-        if key == .temperature {
-            return getContent(type: Temperature.self, data: payloadContent)
-        } else if key == .oxygen {
+        switch key {
+        case .athmospheric:
+            return getContent(type: AtmosphericData.self, data: payloadContent)
+        case .gases:
+            return getContent(type: GasesData.self, data: payloadContent)
+        default:
             return getContent(type: Oxygen.self, data: payloadContent)
         }
-
-        return nil
     }
 
     private func getContent<T: Decodable>(type: T.Type, data: Data) -> T? {

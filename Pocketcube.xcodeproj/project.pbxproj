@@ -36,6 +36,9 @@
 		AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */; };
 		AD6BECA1253393C500040A04 /* RadiaProgressComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */; };
 		AD70C73D253B74ED00AD563A /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD70C73C253B74ED00AD563A /* Config.swift */; };
+		AD76ED7C256413BA000667F4 /* CollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76ED7B256413BA000667F4 /* CollectionViewFlowLayout.swift */; };
+		AD76ED8F256422A6000667F4 /* AtmosphericData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76ED8E256422A6000667F4 /* AtmosphericData.swift */; };
+		AD76ED942564249C000667F4 /* GasesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76ED932564249C000667F4 /* GasesData.swift */; };
 		AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD835EDB2555E1E000290C41 /* Pressure.swift */; };
 		AD9CFDC225419FC00088694A /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC125419FC00088694A /* Temperature.swift */; };
 		AD9CFDCA25419FEA0088694A /* MQTTKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC925419FEA0088694A /* MQTTKeys.swift */; };
@@ -113,6 +116,9 @@
 		AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadiaProgressComponent.swift; sourceTree = "<group>"; };
 		AD70C73C253B74ED00AD563A /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		AD76ED7B256413BA000667F4 /* CollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		AD76ED8E256422A6000667F4 /* AtmosphericData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmosphericData.swift; sourceTree = "<group>"; };
+		AD76ED932564249C000667F4 /* GasesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasesData.swift; sourceTree = "<group>"; };
 		AD835EDB2555E1E000290C41 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
 		AD9CFDC125419FC00088694A /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		AD9CFDC925419FEA0088694A /* MQTTKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTKeys.swift; sourceTree = "<group>"; };
@@ -230,9 +236,12 @@
 		AD1FC16E25351B5C003E91D4 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				AD76ED8D2564226C000667F4 /* New Group */,
 				AD9CFDC125419FC00088694A /* Temperature.swift */,
 				AD835EDB2555E1E000290C41 /* Pressure.swift */,
 				AD65018525603358009824A0 /* Oxygen.swift */,
+				AD76ED8E256422A6000667F4 /* AtmosphericData.swift */,
+				AD76ED932564249C000667F4 /* GasesData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -245,6 +254,7 @@
 				AD6BEC9B253388CC00040A04 /* CircularProgressView.swift */,
 				AD6BECA0253393C500040A04 /* RadiaProgressComponent.swift */,
 				AD6501A025606BC0009824A0 /* MenuButtonItem.swift */,
+				AD76ED7B256413BA000667F4 /* CollectionViewFlowLayout.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -318,6 +328,13 @@
 				AD70C73C253B74ED00AD563A /* Config.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		AD76ED8D2564226C000667F4 /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		AD9CFDC025419FA80088694A /* Parser */ = {
@@ -734,7 +751,9 @@
 				AD65018625603358009824A0 /* Oxygen.swift in Sources */,
 				AD650179255FF6AE009824A0 /* SensorDetailView.swift in Sources */,
 				AD9CFDCF2541A00B0088694A /* SensorKeys.swift in Sources */,
+				AD76ED942564249C000667F4 /* GasesData.swift in Sources */,
 				AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */,
+				AD76ED7C256413BA000667F4 /* CollectionViewFlowLayout.swift in Sources */,
 				AD41EEDD25331A030041655B /* Coordinator.swift in Sources */,
 				ADAB592C2530CF4800F05BA6 /* ColorFactory.swift in Sources */,
 				AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */,
@@ -750,6 +769,7 @@
 				ADAB59212530CE1800F05BA6 /* BikeItauColor.swift in Sources */,
 				ADAB590E2530CA6700F05BA6 /* TemColorScaled.swift in Sources */,
 				AD41EED1253319800041655B /* UIView+Extensions.swift in Sources */,
+				AD76ED8F256422A6000667F4 /* AtmosphericData.swift in Sources */,
 				AD6501A725606D7F009824A0 /* AppFont.swift in Sources */,
 				AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */,
 				AD1FC1672535164C003E91D4 /* NetworkManager.swift in Sources */,

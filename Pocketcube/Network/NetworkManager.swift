@@ -20,7 +20,7 @@ class NetworkManager {
     var socket: SocketIO.SocketIOClient
 
     init() {
-        self.socketManager = SocketManager(socketURL: Config.serverUrl , config: [.log(false), .compress])
+        self.socketManager = SocketManager(socketURL: Config.serverUrl , config: [.log(true), .compress])
         self.socket = socketManager.defaultSocket
     }
 

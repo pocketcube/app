@@ -32,28 +32,39 @@ class ViewController: UIViewController {
         return label
     }()
 
-    lazy var menuItem: UIButton = {
-        let view = UIButton()
-        view.backgroundColor = .red
+    lazy var downloadButton: MenuButtonItem = {
+        let view = MenuButtonItem()
+        view.imageView.image = UIImage(named: "ic_info")
+        view.descriptionLabel.text = "Sobre"
+
+        return view
+    }()
+
+    lazy var aboutButton: MenuButtonItem = {
+        let view = MenuButtonItem()
+        view.imageView.image = UIImage(named: "ic_download")
+        view.descriptionLabel.text = "Baixar dados"
+
         return view
     }()
 
     lazy var menuStackView: UIStackView = {
-        let view = UIStackView()
-        view.backgroundColor = .red
+        let stackview = UIStackView()
+        stackview.spacing = 10
 
-        return view
+        return stackview
     }()
 
     lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: 180, height: 180)
+        let size = CGSize(width: 180, height: 180)
+        let layout = CollectionViewFlowLayout(itemSize: size)
 
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
         collectionView.register(ItemCell.self, forCellWithReuseIdentifier: ItemCell.identifier)
         collectionView.backgroundColor = .clear
+//        collectionVie
 
         return collectionView
     }()
@@ -84,8 +95,8 @@ class ViewController: UIViewController {
         view.addSubview(menuStackView)
         view.addGestureRecognizer(doubleTap)
 
-        menuStackView.addArrangedSubview(menuItem)
-        menuStackView.addArrangedSubview(menuItem)
+        menuStackView.addArrangedSubview(aboutButton)
+        menuStackView.addArrangedSubview(downloadButton)
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -103,18 +114,6 @@ class ViewController: UIViewController {
         menuStackView.snp.makeConstraints {
             $0.centerY.equalTo(titleLabel.snp.centerY)
             $0.trailing.equalToSuperview().inset(30)
-            $0.height.equalTo(70)
-            $0.width.lessThanOrEqualTo(50)
-        }
-
-        menuItem.snp.makeConstraints {
-            $0.height.equalToSuperview()
-            $0.width.equalTo(30)
-        }
-
-        menuItem.snp.makeConstraints {
-            $0.height.equalToSuperview()
-            $0.width.equalTo(30)
         }
     }
 
@@ -162,7 +161,7 @@ extension ViewController: UICollectionViewDataSource {
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return 3
     }
 }
 
@@ -184,25 +183,34 @@ extension ViewController: NetworkManagerDelegate {
         if let content = data as? [String: String] {
             let sensorData = SensorFactory(key: content["topic"] ?? "").getValue(content["topic"] ?? "", payload: content["payload"] ?? "")
 
-            if let temperature = sensorData as? Temperature {
-                DataManager.temperature.append(temperature)
+            if let data = sensorData as? AtmosphericData {
                 DispatchQueue.main.async {
-                    let indexPath = IndexPath(item: 0, section: 0)
-                    if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
-                        cell.cardView.valueLabel.text = "\(temperature.temp)"
+                    if let temperature = data.temperature {
+                        self.updateItem(item: 0, section: 0, value: temperature)
+                    } else if let pressure = data.pressure {
+                        self.updateItem(item: 1, section: 0, value: pressure)
+                    } else if let humidity = data.humidity {
+                        self.updateItem(item: 2, section: 0, value: humidity)
                     }
                 }
-            } else if let oxygen = sensorData as? Oxygen {
-                DataManager.oxygen.append(oxygen)
+            } else if let data = sensorData as? GasesData {
                 DispatchQueue.main.async {
-                    let indexPath = IndexPath(item: 1, section: 0)
-                    if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
-                        cell.cardView.valueLabel.text = "\(oxygen.oxygen)"
+                    if let temperature = data.co2 {
+                        self.updateItem(item: 0, section: 1, value: temperature)
+                    } else if let pressure = data.nh3 {
+                        self.updateItem(item: 1, section: 1, value: pressure)
+                    } else if let humidity = data.n02 {
+                        self.updateItem(item: 2, section: 1, value: humidity)
                     }
                 }
             }
-        } else {
-            debugPrint("deu ruim")
+        }
+    }
+
+    private func updateItem(item: Int, section: Int, value: Double) {
+        let indexPath = IndexPath(item: item, section: section)
+        if let cell = self.collectionView.cellForItem(at: indexPath) as? ItemCell {
+            cell.cardView.valueLabel.text = "\(value)"
         }
     }
 }
