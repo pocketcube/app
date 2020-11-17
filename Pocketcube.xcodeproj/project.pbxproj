@@ -39,6 +39,7 @@
 		AD76ED8F256422A6000667F4 /* AtmosphericData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76ED8E256422A6000667F4 /* AtmosphericData.swift */; };
 		AD76ED942564249C000667F4 /* GasesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76ED932564249C000667F4 /* GasesData.swift */; };
 		AD76EDBB25647B54000667F4 /* ChartColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76EDBA25647B54000667F4 /* ChartColors.swift */; };
+		AD76EDC3256482E5000667F4 /* LocationItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD76EDC2256482E5000667F4 /* LocationItemView.swift */; };
 		AD835EDC2555E1E000290C41 /* Pressure.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD835EDB2555E1E000290C41 /* Pressure.swift */; };
 		AD9CFDC225419FC00088694A /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC125419FC00088694A /* Temperature.swift */; };
 		AD9CFDCA25419FEA0088694A /* MQTTKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9CFDC925419FEA0088694A /* MQTTKeys.swift */; };
@@ -110,6 +111,7 @@
 		AD76ED8E256422A6000667F4 /* AtmosphericData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AtmosphericData.swift; sourceTree = "<group>"; };
 		AD76ED932564249C000667F4 /* GasesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasesData.swift; sourceTree = "<group>"; };
 		AD76EDBA25647B54000667F4 /* ChartColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartColors.swift; sourceTree = "<group>"; };
+		AD76EDC2256482E5000667F4 /* LocationItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationItemView.swift; sourceTree = "<group>"; };
 		AD835EDB2555E1E000290C41 /* Pressure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pressure.swift; sourceTree = "<group>"; };
 		AD9CFDC125419FC00088694A /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
 		AD9CFDC925419FEA0088694A /* MQTTKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTKeys.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 			isa = PBXGroup;
 			children = (
 				ADAB58CE2530C90300F05BA6 /* Main.storyboard */,
+				AD76EDC2256482E5000667F4 /* LocationItemView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -739,6 +742,7 @@
 				AD76ED8F256422A6000667F4 /* AtmosphericData.swift in Sources */,
 				AD6501A725606D7F009824A0 /* AppFont.swift in Sources */,
 				AD6BEC9C253388CC00040A04 /* CircularProgressView.swift in Sources */,
+				AD76EDC3256482E5000667F4 /* LocationItemView.swift in Sources */,
 				AD1FC1672535164C003E91D4 /* NetworkManager.swift in Sources */,
 				AD6501A125606BC0009824A0 /* MenuButtonItem.swift in Sources */,
 				ADAB58C92530C90300F05BA6 /* AppDelegate.swift in Sources */,

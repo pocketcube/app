@@ -119,7 +119,17 @@ class ViewController: UIViewController {
     private func setup() {
         NetworkManager.shared.observe(delegate: self)
     }
+
+
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let touch = touches.first!
+        let location = touch.location(in: self.view)
+
+        debugPrint("Postion: \(location)")
+    }
 }
+
+
 
 class ItemCell: UICollectionViewCell {
 
@@ -130,10 +140,38 @@ class ItemCell: UICollectionViewCell {
         return component
     }()
 
-    func setup() {
+    func setup(with indexPath: IndexPath) {
         contentView.addSubview(cardView)
         cardView.snp.makeConstraints {
             $0.edges.equalToSuperview().inset(10)
+        }
+
+        setupView(section: indexPath.section, item: indexPath.item)
+    }
+
+    private func setupView(section: Int, item: Int) {
+        if section == 0  {
+            if item == 0 {
+                cardView.titleLabel.text = "TEMPERATURA"
+                cardView.metricsLabel.text = "ºC"
+            } else if item == 1 {
+                cardView.titleLabel.text = "UMIDADE"
+                cardView.metricsLabel.text = "UR"
+            } else {
+                cardView.titleLabel.text = "PRESSÃO"
+                cardView.metricsLabel.text = "HPA"
+            }
+        } else {
+            if item == 0 {
+                cardView.titleLabel.text = "NO2"
+                cardView.metricsLabel.text = "ppm"
+            } else if item == 1 {
+                cardView.titleLabel.text = "NH3"
+                cardView.metricsLabel.text = "ppm"
+            } else {
+                cardView.titleLabel.text = "CO2"
+                cardView.metricsLabel.text = "ppm"
+            }
         }
     }
 }
@@ -142,7 +180,7 @@ extension ViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ItemCell.identifier, for: indexPath) as! ItemCell
-        cell.setup()
+        cell.setup(with: indexPath)
 
         return cell
     }

@@ -35,7 +35,7 @@ class Downloader {
                                         viewController.present(avc, animated: true, completion: nil)
                                     } else {
                                         let popoverCntlr = UIPopoverController(contentViewController: avc)
-                                        popoverCntlr.present(from: CGRect(x: viewController.view.frame.size.width/2, y: viewController.view.frame.size.height/4, width: 0, height: 0),  in: viewController.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
+                                        popoverCntlr.present(from: CGRect(x: 982.0, y: 132.0, width: 0, height: 0),  in: viewController.view, permittedArrowDirections: UIPopoverArrowDirection.any, animated: true)
                                     }
                                 }
                             }
