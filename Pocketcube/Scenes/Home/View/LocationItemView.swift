@@ -34,7 +34,7 @@ class LocationItemView: UIView {
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Temperature"
+        label.text = "INFORMAÇÕES DO SATÉLITE"
         label.textColor = .white
         label.font = AppFont.regular.size(18)
         label.textAlignment = .center
@@ -42,26 +42,35 @@ class LocationItemView: UIView {
         return label
     }()
 
-    lazy var valueLabel: UILabel = {
+    lazy var velocityLabel: UILabel = {
         let label = UILabel()
-        label.text = "-"
+        label.text = "VELOCIDADE: -"
+        label.textColor = .white
+        label.font = AppFont.regular.size(18)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    lazy var altitudeLabel: UILabel = {
+        let label = UILabel()
+        label.text = "ALTITUDE: -"
+        label.textColor = .white
+        label.font = AppFont.regular.size(18)
+        label.textAlignment = .center
+
+        return label
+    }()
+
+    lazy var positionLabel: UILabel = {
+        let label = UILabel()
+        label.text = "LATITUDE:  -  LONGITUDE: -"
         label.textColor = .white
         label.font = AppFont.regular.size(40)
         label.textAlignment = .center
 
         return label
     }()
-
-    lazy var metricsLabel: UILabel = {
-        let label = UILabel()
-        label.text = "ºC"
-        label.textColor = .white
-        label.font = AppFont.regular.size(26)
-        label.textAlignment = .center
-
-        return label
-    }()
-
 
     // MARK: - Initializer
 
@@ -72,28 +81,39 @@ class LocationItemView: UIView {
         addSubview(blurEffectView)
 
         stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(valueLabel)
-        stackView.addArrangedSubview(metricsLabel)
+        stackView.addArrangedSubview(velocityLabel)
+        stackView.addArrangedSubview(altitudeLabel)
+        stackView.addArrangedSubview(positionLabel)
 
         addSubview(stackView)
 
         blurEffectView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.height.equalTo(20)
+            $0.width.equalToSuperview()
         }
 
         stackView.snp.makeConstraints {
-            $0.edges.equalToSuperview().inset(8)
+            $0.height.equalTo(20)
+            $0.width.equalToSuperview()
         }
 
         titleLabel.snp.makeConstraints {
+            $0.height.equalTo(20)
             $0.width.equalToSuperview()
         }
 
-        valueLabel.snp.makeConstraints {
+        velocityLabel.snp.makeConstraints {
+            $0.height.equalTo(20)
             $0.width.equalToSuperview()
         }
 
-        valueLabel.snp.makeConstraints {
+        altitudeLabel.snp.makeConstraints {
+            $0.height.equalTo(20)
+            $0.width.equalToSuperview()
+        }
+
+        positionLabel.snp.makeConstraints {
+            $0.height.equalTo(20)
             $0.width.equalToSuperview()
         }
     }

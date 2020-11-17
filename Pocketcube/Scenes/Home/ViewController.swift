@@ -48,6 +48,14 @@ class ViewController: UIViewController {
         return view
     }()
 
+    lazy var locationItemView: LocationItemView = {
+        let stackview = UIStackView()
+        stackview.spacing = 10
+
+        return stackview
+    }()
+
+
     lazy var menuStackView: UIStackView = {
         let stackview = UIStackView()
         stackview.spacing = 10
