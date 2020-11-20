@@ -107,32 +107,25 @@ extension AboutItemView {
     func setupSubviews() {
         stackView.addArrangedSubview(closeButton)
         stackView.addArrangedSubview(titleLabel)
-        stackView.addArrangedSubview(subtitleLabel)
         stackView.addArrangedSubview(descriptionLabel)
     }
 
     func setupConstraints() {
         stackView.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(30)
-            $0.bottom.leading.trailing.equalToSuperview().inset(24)
+            $0.edges.equalToSuperview()
         }
 
         closeButton.snp.makeConstraints {
-            $0.height.width.equalTo(60)
+            $0.height.width.equalTo(40)
         }
 
         titleLabel.snp.makeConstraints {
-            $0.height.equalTo(70)
-            $0.width.equalToSuperview()
-        }
-
-        subtitleLabel.snp.makeConstraints {
-            $0.height.equalTo(70)
+            $0.height.equalTo(50)
             $0.width.equalToSuperview()
         }
 
         descriptionLabel.snp.makeConstraints {
-            $0.height.greaterThanOrEqualTo(200)
+            $0.height.greaterThanOrEqualTo(50)
             $0.width.equalToSuperview()
         }
     }

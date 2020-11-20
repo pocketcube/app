@@ -8,7 +8,7 @@
 import Foundation
 
 struct GasesData: Decodable {
-    var n02: Double?
+    var no2: Double?
     var nh3: Double?
     var co2: Double?
 }

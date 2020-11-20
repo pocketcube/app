@@ -93,7 +93,7 @@ class SensorDetailView: UIView {
         let button = UIButton()
         button.clipsToBounds = true
         button.layer.cornerRadius = 6
-        button.setImage(UIImage(named: "close_ic"), for: .normal)
+        button.setImage(UIImage(named: "ic_close"), for: .normal)
         button.addTarget(self, action: #selector(closePressed), for: .touchUpInside)
 
         return button
@@ -194,7 +194,7 @@ class ChartMarker: MarkerView {
         let offset = self.offsetForDrawing(atPoint: point)
 
         drawText(
-            text: "\(text)  TETSTETS\n 43343 " as NSString,
+            text: "Value: \(text) " as NSString,
             rect: CGRect(origin: CGPoint(x: point.x + offset.x, y: point.y + offset.y),
             size: self.bounds.size),
             withAttributes: drawAttributes

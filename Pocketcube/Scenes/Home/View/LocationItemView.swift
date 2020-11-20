@@ -46,8 +46,7 @@ class LocationItemView: UIView {
         let label = UILabel()
         label.text = "VELOCIDADE: -"
         label.textColor = .white
-        label.font = AppFont.regular.size(18)
-        label.textAlignment = .center
+        label.font = AppFont.regular.size(14)
 
         return label
     }()
@@ -56,8 +55,7 @@ class LocationItemView: UIView {
         let label = UILabel()
         label.text = "ALTITUDE: -"
         label.textColor = .white
-        label.font = AppFont.regular.size(18)
-        label.textAlignment = .center
+        label.font = AppFont.regular.size(14)
 
         return label
     }()
@@ -66,8 +64,7 @@ class LocationItemView: UIView {
         let label = UILabel()
         label.text = "LATITUDE:  -  LONGITUDE: -"
         label.textColor = .white
-        label.font = AppFont.regular.size(40)
-        label.textAlignment = .center
+        label.font = AppFont.regular.size(14)
 
         return label
     }()
@@ -85,16 +82,15 @@ class LocationItemView: UIView {
         stackView.addArrangedSubview(altitudeLabel)
         stackView.addArrangedSubview(positionLabel)
 
-        addSubview(stackView)
+        blurEffectView.contentView.addSubview(stackView)
 
         blurEffectView.snp.makeConstraints {
-            $0.height.equalTo(20)
+            $0.height.equalToSuperview()
             $0.width.equalToSuperview()
         }
 
         stackView.snp.makeConstraints {
-            $0.height.equalTo(20)
-            $0.width.equalToSuperview()
+            $0.edges.equalToSuperview().inset(16)
         }
 
         titleLabel.snp.makeConstraints {

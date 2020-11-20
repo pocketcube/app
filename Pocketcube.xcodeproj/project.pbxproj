@@ -25,6 +25,7 @@
 		AD41EEDD25331A030041655B /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEDC25331A030041655B /* Coordinator.swift */; };
 		AD41EEE525331A0B0041655B /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD41EEE425331A0B0041655B /* AppCoordinator.swift */; };
 		AD5F2738255E9AFA00E4442F /* ChartDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */; };
+		AD647BA02565719F00D9CE54 /* PositionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD647B9F2565719F00D9CE54 /* PositionData.swift */; };
 		AD650179255FF6AE009824A0 /* SensorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD650178255FF6AE009824A0 /* SensorDetailView.swift */; };
 		AD650181255FFDB7009824A0 /* AboutItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD650180255FFDB7009824A0 /* AboutItemView.swift */; };
 		AD65018625603358009824A0 /* Oxygen.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD65018525603358009824A0 /* Oxygen.swift */; };
@@ -97,6 +98,7 @@
 		AD41EEDC25331A030041655B /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		AD41EEE425331A0B0041655B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		AD5F2737255E9AFA00E4442F /* ChartDrawer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartDrawer.swift; sourceTree = "<group>"; };
+		AD647B9F2565719F00D9CE54 /* PositionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionData.swift; sourceTree = "<group>"; };
 		AD650178255FF6AE009824A0 /* SensorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SensorDetailView.swift; sourceTree = "<group>"; };
 		AD650180255FFDB7009824A0 /* AboutItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutItemView.swift; sourceTree = "<group>"; };
 		AD65018525603358009824A0 /* Oxygen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Oxygen.swift; sourceTree = "<group>"; };
@@ -226,6 +228,7 @@
 				AD65018525603358009824A0 /* Oxygen.swift */,
 				AD76ED8E256422A6000667F4 /* AtmosphericData.swift */,
 				AD76ED932564249C000667F4 /* GasesData.swift */,
+				AD647B9F2565719F00D9CE54 /* PositionData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -750,6 +753,7 @@
 				ADAB58CB2530C90300F05BA6 /* SceneDelegate.swift in Sources */,
 				ADB20DE0255DE62600D5128B /* SensorDetailViewController.swift in Sources */,
 				AD70C73D253B74ED00AD563A /* Config.swift in Sources */,
+				AD647BA02565719F00D9CE54 /* PositionData.swift in Sources */,
 				AD5F2738255E9AFA00E4442F /* ChartDrawer.swift in Sources */,
 				AD650181255FFDB7009824A0 /* AboutItemView.swift in Sources */,
 				AD41EEBA25326A8A0041655B /* CardComponent.swift in Sources */,

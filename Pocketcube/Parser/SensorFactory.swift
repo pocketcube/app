@@ -23,8 +23,8 @@ struct SensorFactory {
             return getContent(type: AtmosphericData.self, data: payloadContent)
         case .gases:
             return getContent(type: GasesData.self, data: payloadContent)
-        default:
-            return getContent(type: Oxygen.self, data: payloadContent)
+        case .gps:
+            return getContent(type: PositionData.self, data: payloadContent)
         }
     }
 

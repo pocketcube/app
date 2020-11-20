@@ -8,13 +8,13 @@
 import UIKit
 import Charts
 
-
 class AboutViewController: UIViewController, AboutItemViewDelegate {
 
     // MARK: - Properties
 
     lazy var aboutItemView: AboutItemView = {
         let view = AboutItemView(frame: .zero)
+        view.backgroundColor = .cyan
         view.delegate = self
 
         return view
@@ -27,24 +27,16 @@ class AboutViewController: UIViewController, AboutItemViewDelegate {
         view.layer.shadowOffset = CGSize(width: 2.0, height: 1.0)
         view.layer.shadowRadius = 5.0
         view.layer.shadowOpacity = 0.15
+        view.backgroundColor = .red
 
         return view
     }()
 
-    lazy var blurEffectView: UIVisualEffectView = {
-        let effect = UIBlurEffect(style: .extraLight)
-        let blurEffectView = UIVisualEffectView(effect: effect)
-        blurEffectView.frame = view.frame
-        blurEffectView.clipsToBounds = true
-        blurEffectView.layer.cornerRadius = 5
-
-        return blurEffectView
-    }()
-
     lazy var backgroundView: UIView = {
         let view = UIView()
-        view.backgroundColor = .black
-        view.alpha = 0.7
+        view.backgroundColor = .red
+//        view.alpha = 0.7
+//        view.
 
         return view
     }()

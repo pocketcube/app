@@ -15,12 +15,12 @@ class ViewController: UIViewController {
 
     var counter = 0
 
-    private lazy var doubleTap: UITapGestureRecognizer = {
-        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.buttonClicked))
-        gesture.numberOfTapsRequired = 2
-
-        return gesture
-    }()
+//    private lazy var doubleTap: UITapGestureRecognizer = {
+//        let gesture = UITapGestureRecognizer(target: self, action:  #selector(self.buttonClicked))
+//        gesture.numberOfTapsRequired = 2
+//
+//        return gesture
+//    }()
 
     lazy var titleLabel: UILabel = {
         let label = UILabel()
@@ -32,16 +32,22 @@ class ViewController: UIViewController {
         return label
     }()
 
-    lazy var downloadButton: MenuButtonItem = {
+//    private let tapAbout = UITapGestureRecognizer(target: self, action: #selector(self.aboutClicked(_:)))
+
+    lazy var aboutButton: MenuButtonItem = {
         let view = MenuButtonItem()
+
         view.imageView.image = UIImage(named: "ic_info")
         view.descriptionLabel.text = "Sobre"
 
         return view
     }()
 
-    lazy var aboutButton: MenuButtonItem = {
+//    private let tapDownload = UITapGestureRecognizer(target: self, action: #selector(self.downloadClicked(_:)))
+
+    lazy var downloadButton: MenuButtonItem = {
         let view = MenuButtonItem()
+
         view.imageView.image = UIImage(named: "ic_download")
         view.descriptionLabel.text = "Baixar dados"
 
@@ -49,10 +55,8 @@ class ViewController: UIViewController {
     }()
 
     lazy var locationItemView: LocationItemView = {
-        let stackview = UIStackView()
-        stackview.spacing = 10
-
-        return stackview
+        let view = LocationItemView()
+        return view
     }()
 
 
@@ -87,23 +91,30 @@ class ViewController: UIViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-
-    @objc func buttonClicked() {
-        Downloader.download(self)
-    }
+//
+//    @objc func buttonClicked() {
+//        Downloader.download(self)
+//    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
 
+        let tapAbout = UITapGestureRecognizer(target: self, action: #selector(self.aboutClicked(_:)))
+        let tapDownload = UITapGestureRecognizer(target: self, action: #selector(self.downloadClicked(_:)))
+
+        aboutButton.addGestureRecognizer(tapAbout)
+        downloadButton.addGestureRecognizer(tapDownload)
+
         view.setGradientBackground()
         view.addSubview(collectionView)
         view.addSubview(titleLabel)
         view.addSubview(menuStackView)
-        view.addGestureRecognizer(doubleTap)
+//        view.addGestureRecognizer(doubleTap)
+        view.addSubview(locationItemView)
 
-        menuStackView.addArrangedSubview(aboutButton)
         menuStackView.addArrangedSubview(downloadButton)
+        menuStackView.addArrangedSubview(aboutButton)
 
         titleLabel.snp.makeConstraints {
             $0.centerX.equalToSuperview()
@@ -122,18 +133,34 @@ class ViewController: UIViewController {
             $0.centerY.equalTo(titleLabel.snp.centerY)
             $0.trailing.equalToSuperview().inset(30)
         }
+
+        locationItemView.snp.makeConstraints {
+            $0.height.greaterThanOrEqualTo(100)
+            $0.width.equalTo(400)
+            $0.centerX.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(50)
+        }
     }
 
     private func setup() {
         NetworkManager.shared.observe(delegate: self)
     }
 
+    // MARK: - Actions
 
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let touch = touches.first!
-        let location = touch.location(in: self.view)
+    @objc func aboutClicked(_ sender: UITapGestureRecognizer? = nil) {
+        let vc = SensorDetailViewController()
 
-        debugPrint("Postion: \(location)")
+        vc.modalPresentationStyle = .overFullScreen
+        vc.modalTransitionStyle = .crossDissolve
+
+        debugPrint("About Click")
+        self.navigationController?.present(vc, animated: true, completion: nil)
+    }
+
+    @objc func downloadClicked(_ sender: UITapGestureRecognizer? = nil) {
+        debugPrint("Donwload click")
+        Downloader.download(self)
     }
 }
 
@@ -245,8 +272,18 @@ extension ViewController: NetworkManagerDelegate {
                         self.updateItem(item: 0, section: 1, value: temperature)
                     } else if let pressure = data.nh3 {
                         self.updateItem(item: 1, section: 1, value: pressure)
-                    } else if let humidity = data.n02 {
+                    } else if let humidity = data.no2 {
                         self.updateItem(item: 2, section: 1, value: humidity)
+                    }
+                }
+            } else if let data = sensorData as? PositionData {
+                DispatchQueue.main.async {
+                    if let altitude = data.altitude {
+                        self.locationItemView.altitudeLabel.text = "ALTIDUDE: \(altitude) m"
+                    } else if let lat = data.lat, let long = data.lon {
+                        self.locationItemView.positionLabel.text = "LATITUDE: \(lat)   LONGITUDE: \(long)"
+                    } else if let velocity = data.speed {
+                        self.locationItemView.velocityLabel.text = "VELOCIDADE: \(velocity) m/s"
                     }
                 }
             }
